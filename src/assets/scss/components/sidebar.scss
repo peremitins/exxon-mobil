@@ -1,0 +1,64 @@
+.sidebar {
+  width: 265px;
+  flex: 0 0 265px;
+  padding: 22px 25px 22px 5px;
+
+  &__logo {
+    width: 125px;
+    height: 24px;
+    margin-bottom: 48px;
+  }
+
+  &__main-menu {
+    margin-bottom: 39px;
+  }
+
+  &__title {
+    color: $text-secondary;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  &__link-wrapper {
+  }
+
+  &__link-item {
+    width: 100%;
+    height: 40px;
+  }
+  
+  &__link {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    padding-left: 26px;
+    font-size: 15px;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: $text-secondary;
+    }
+    
+    &.router-link-exact-active {
+      color: $text-brand;
+      
+      &::before {
+        background-color: $brand-primary;
+      }
+    }
+  }
+
+  &__menu-settings {
+  }
+}

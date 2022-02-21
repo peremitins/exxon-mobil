@@ -1,0 +1,25 @@
+.tabs {
+  
+  &__tab-wrapper {
+    display: flex;
+  }
+  
+  &__tab {
+    font-size: 15px;
+    color: $text-secondary;
+    
+    & + & {
+      margin-left: 25px;
+    }
+    
+    &.is-active {
+      color: $text-brand;
+      border-bottom: 2px solid $brand-primary;;
+    }
+  }
+  
+  &__tab-link {
+    padding: 12px 0 14px;
+    cursor: pointer;
+  }
+}

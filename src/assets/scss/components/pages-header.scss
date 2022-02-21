@@ -1,0 +1,44 @@
+.m1c {
+  
+  &__header {
+    display: grid;
+    grid-template-columns: minmax(320px, 518px) 1fr;
+    grid-template-rows: auto auto;
+    gap: 0 0;
+    grid-template-areas: 
+      ". ."
+      ". .";
+    margin-bottom: 5px;
+  }
+  
+  &__title {
+    max-width: 518px;
+    font-weight: 600;
+    font-size: 27px;
+    line-height: 35px;
+    color: $text-primary;
+    margin-bottom: 11px;
+  }
+  
+  &__btn-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-self: end;
+  }
+  
+  &__code {
+    font-size: 15px;
+    color: $text-secondary;
+  }
+  
+  &__update-date {
+    font-size: 15px;
+    line-height: 22px;
+    color: $text-secondary;
+    justify-self: end;
+  }
+  
+  .btn__cancel {
+    margin-right: 15px;
+  }
+}

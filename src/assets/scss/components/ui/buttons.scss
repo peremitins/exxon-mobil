@@ -1,0 +1,31 @@
+.btn {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  
+  &__cancel {
+    padding: 8px 16px;
+    color: $text-secondary;
+    background-color: $bg-button-back;
+    border-radius: 6px;
+  }
+  
+  &__save {
+    position: relative;
+    padding: 8px 16px 8px 36px;
+    color: $white;
+    background-color: $brand-primary;
+    border-radius: 6px;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+      background: url(../img/svg/btn-save.svg);
+    }
+  }
+}

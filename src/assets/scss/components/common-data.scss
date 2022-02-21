@@ -1,0 +1,83 @@
+.common-data {
+  padding: 21px 0;
+  
+  &__status {
+    margin-bottom: 6px;
+  }
+  
+  &__btn-toggle {
+    margin-bottom: 25px;
+  }
+  
+  &__title {
+    font-weight: 600;
+    font-size: 19px;
+    color: #1A1717;
+    margin-bottom: 16px;
+  }
+  
+  &__subtitle {
+    font-size: 14px;
+    line-height: 20px;
+    color: $text-secondary;
+  }
+  
+  &__main {
+    display: grid;
+    grid-template-columns: 1fr 330px;
+    grid-template-rows: auto auto;
+    column-gap: 30px;
+    grid-template-areas: 
+      ". ."
+    ;
+  }
+  
+  &__main-info {
+    display: grid;
+    grid-template-columns: 1fr 330px;
+    grid-template-rows: auto auto;
+    column-gap: 30px;
+    grid-template-areas: 
+      "title title"
+      "type type"
+      "location location"
+      "ip point"
+      "tim link"
+      "channel subchannel"
+    ;
+  }
+  
+  .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .row-1 {
+    grid-area: title;
+  }
+  .row-2 {
+    grid-area: type;
+  }
+  .row-3 {
+    grid-area: location;
+  }
+  .row-4 {
+    grid-area: ip;
+  }
+  .row-5 {
+    grid-area: point;
+  }
+  .row-6 {
+    grid-area: tim;
+  }
+  .row-7 {
+    grid-area: link;
+  }
+  .row-8 {
+    grid-area: channel;
+  }
+  .row-9 {
+    grid-area: subchannel;
+  }
+}

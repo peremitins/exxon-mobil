@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  margin-bottom: 20px;
+  
+  &__backward {
+    display: flex;
+    align-items: center;
+    width: 94px;
+    height: 36px;
+    background-color: $bg-button-back;
+    border-radius: 6px;
+  }
+  
+  &__backward-text {
+    font-size: 15px;
+    font-weight: 600;
+    color: $text-secondary;
+  }
+  
+  &__left-arrow {
+    width: 24px;
+    height: 24px;
+  }
+  
+  &__person-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
