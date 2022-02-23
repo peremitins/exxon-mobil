@@ -3,6 +3,11 @@
   &__btn {
     padding: 8px 15.5px;
     border: 1px solid #EBEBEB;
+    transition: color $transition;
+    
+    &:hover {
+      color: $text-brand;
+    }
     
     &:first-child {
       border-radius: 6px 0px 0px 6px;

@@ -1,27 +1,43 @@
 <template>
   <div id="app">
-    <div class="main container">
+    <Modal
+      v-if="isModalOpen"
+      @closeModal="closeModal"
+      @acceptModal="acceptModal"
+    />
+    <div class="main">
       <Sidebar />
       <div class="main-content">
-        <Header></Header>
-        <router-view class="pages"/>
+        <router-view class="pages" />
       </div>
     </div>
+    <Footer v-if="(this.$route.path !== '/') && (this.$route.name !== 'Error')" />
   </div>
 </template>
 
 <script>
-import Header from './components/Header'
+import Footer from './components/Footer'
+import Modal from './components/Modal'
 import Sidebar from './components/Sidebar.vue'
 
 export default {
   components: {
-    Header,
+    Footer,
+    Modal,
     Sidebar
+  },
+  data() {
+    return {
+      isModalOpen: true
+    }
+  },
+  methods: {
+    closeModal(val) {
+      this.isModalOpen = val;
+    },
+    acceptModal(val) {
+      this.isModalOpen = val;
+    }
   }
 }
 </script>
-
-<style lang="scss">
-
-</style>

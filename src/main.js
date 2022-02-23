@@ -2,11 +2,14 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import vSelect from 'vue-select'
+import Multiselect from 'vue-multiselect'
+import VCalendar from 'v-calendar'
 import './assets/scss/main.scss'
-import 'vue-select/dist/vue-select.css'
+import 'vue-multiselect/dist/vue-multiselect.min.css'
 
-Vue.component('v-select', vSelect)
+Vue.component('multiselect', Multiselect)
+
+Vue.use(VCalendar)
 
 Vue.config.productionTip = false
 

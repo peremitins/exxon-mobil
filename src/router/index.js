@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import PointsM1C from '../views/PointsM1C.vue'
+import Points from '../views/Points.vue'
+import Error from '../views/Error.vue'
 
 Vue.use(VueRouter)
 
@@ -12,9 +13,14 @@ const routes = [
     component: Home
   },
   {
-    path: '/pointsm1c',
-    name: 'PointsM1C',
-    component: PointsM1C
+    path: '/points/:id',
+    name: 'Points',
+    component: Points
+  },
+  {
+    path: "*",
+    name: 'Error',
+    component: Error
   }
 ]
 

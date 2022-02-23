@@ -8,6 +8,10 @@
     color: $text-secondary;
     background-color: $bg-button-back;
     border-radius: 6px;
+    
+    &:hover {
+      background-color: #F0F0F0;
+    }
   }
   
   &__save {
@@ -16,6 +20,10 @@
     color: $white;
     background-color: $brand-primary;
     border-radius: 6px;
+    
+    &:hover {
+      background-color: #F20C17;
+    }
     
     &::before {
       content: '';

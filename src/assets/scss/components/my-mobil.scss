@@ -1,0 +1,12 @@
+.my-mobil {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 16px 30px;
+  padding: 21px 0;
+  grid-template-areas: 
+    'row_1 . .'
+    'row_2 row_3 .'
+    'row_4 row_4 .'
+  ;
+}

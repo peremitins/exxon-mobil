@@ -1,0 +1,85 @@
+.sales {
+  padding: 30px 0;
+  
+  &__tabs {
+    margin-bottom: 14px;
+  }
+  
+  &__content {
+    
+  }
+  
+  // volumes
+  
+  &__volume-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 100px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid $divider;;
+  }
+  
+  &__volume {
+    margin-right: 30px;
+    margin-bottom: 14px;
+  }
+  
+  &__volume-title {
+    font-size: 14px;
+    line-height: 20px;
+    color: $text-secondary;
+    margin-bottom: 6px;
+  }
+  
+  &__volume-value {
+    font-size: 15px;
+    line-height: 22px;
+    color: #1A1717;
+  }
+  
+  // products-wrapper
+  
+  &__products-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  &__title {
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 27px;
+    margin-bottom: 27px;
+  }
+  
+  &__products-item {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 50%;
+  }
+  
+  .custom-checkbox {
+    height: 36px;
+  }
+  .custom-checkbox + .custom-checkbox {
+    margin-top: 15px;
+  }
+  
+  &__focus-product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 515px;
+    
+    & + & {
+      margin-top: 15px;
+    }
+  }
+  
+  &__focus-product-name {
+    margin-right: 35px;
+    font-size: 15px;
+    line-height: 22px;
+  }
+}

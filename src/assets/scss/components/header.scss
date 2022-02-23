@@ -5,6 +5,13 @@
   height: 64px;
   margin-bottom: 20px;
   
+  &__title {
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 27px;
+    color: $text-primary;
+  }
+  
   &__backward {
     display: flex;
     align-items: center;
@@ -12,6 +19,10 @@
     height: 36px;
     background-color: $bg-button-back;
     border-radius: 6px;
+    
+    &:hover {
+      background-color: #F0F0F0;
+    }
   }
   
   &__backward-text {
@@ -23,6 +34,14 @@
   &__left-arrow {
     width: 24px;
     height: 24px;
+  }
+  
+  &__person {
+    transition: opacity $transition;
+    
+    &:hover {
+      opacity: .7;
+    }
   }
   
   &__person-icon {
