@@ -8,16 +8,18 @@
 @import "components/header.scss";
 @import "components/pages-header.scss";
 @import "components/common-data.scss";
+@import "components/filter-block.scss";
+@import "components/mobil-bonus.scss";
+@import "components/my-mobil.scss";
+@import "components/brand-assessment.scss";
+@import "components/sales.scss";
+@import "components/promotions.scss";
+@import "components/error.scss";
+@import "components/modal.scss";
+@import "components/footer.scss";
 
 @import "components/ui/tabs.scss";
+@import "components/ui/tabs-inner.scss";
 @import "components/ui/buttons.scss";
 @import "components/ui/button-group.scss";
 
-.main {
-  display: flex;
-}
-
-.main-content {
-  width: 100%;
-  padding: 0px 30px;
-}

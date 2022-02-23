@@ -2,11 +2,18 @@
   
   &__tab-wrapper {
     display: flex;
+    border-bottom: 1px solid #EBEBEB;
   }
   
   &__tab {
     font-size: 15px;
     color: $text-secondary;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom .2s ease, color .2s ease;
+    
+    &:hover {
+      color: red;
+    }
     
     & + & {
       margin-left: 25px;
@@ -14,7 +21,7 @@
     
     &.is-active {
       color: $text-brand;
-      border-bottom: 2px solid $brand-primary;;
+      border-bottom: 2px solid $brand-primary;
     }
   }
   
@@ -22,4 +29,8 @@
     padding: 12px 0 14px;
     cursor: pointer;
   }
+}
+
+.tabs-details {
+  padding-right: 65px;
 }

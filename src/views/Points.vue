@@ -1,0 +1,102 @@
+<template>
+  <div class="m1c">
+    <Header />
+    <div class="m1c__header">
+      <h2 class="m1c__title">Mobil 1 Центр Автосервис на Кропоткина (ТРИО ООО_ИП Саитова)</h2>
+      <div class="m1c__btn-wrapper">
+        <button class="btn btn__cancel">
+          Отменить
+        </button>
+        <button class="btn btn__save">
+          Сохранить изменения
+        </button>
+      </div>
+      <div class="m1c__code">
+        RU124124
+      </div>
+      <div class="m1c__update-date">
+        Обновлено
+        <span> 12.01.2022  22:45</span>
+      </div>
+    </div>
+    <Tabs>
+      <Tab
+        v-for="component in componentsData"
+        :key="component.name"
+        :name="component.name"
+        :selected="component.selected"
+      >
+        <component :is="component.component"></component>
+      </Tab>
+    </Tabs>
+  </div>
+</template>
+
+<script>
+import Header from '@/components/Header'
+import Tab from '@/components/ui/Tab'
+import Tabs from '@/components/ui/Tabs'
+import CommonData from '@/components/CommonData.vue'
+import MobilBonus from '@/components/MobilBonus.vue'
+import MyMobil from '@/components/MyMobil.vue'
+import BrandAssessment from '@/components/BrandAssessment.vue'
+import Sales from '@/components/Sales.vue'
+import Promotions from '@/components/Promotions.vue'
+
+export default {
+  name: 'Points',
+  components: {
+    Header,
+    Tab,
+    Tabs,
+    CommonData,
+    MobilBonus,
+    MyMobil,
+    BrandAssessment,
+    Sales,
+    Promotions
+  },
+  data() {
+    return {
+      CommonData,
+      MobilBonus,
+      MyMobil,
+      BrandAssessment,
+      Sales,
+      Promotions,
+      componentsData: [
+        {
+          name: "Общие данные",
+          component: 'CommonData',
+          selected: true
+        },
+        {
+          name: "Mobil Бонус",
+          component: 'MobilBonus',
+          selected: false
+        },
+        {
+          name: "Промоакции",
+          component: 'Promotions',
+          selected: false
+        },
+        {
+          name: "My Mobil",
+          component: 'MyMobil',
+          selected: false
+        },
+        {
+          name: "Brand Assessment",
+          component: 'BrandAssessment',
+          selected: false
+        },
+        {
+          name: "Квартальные продажи",
+          component: 'Sales',
+          selected: false
+        }
+      ]
+    }
+  }
+}
+</script>

@@ -17,7 +17,7 @@ export default {
   props: ['selected','default', 'tabs'],
   methods: {
     changeSelectVal: function(val) {
-      this.$emit('test', val)
+      this.$emit('changeSelectVal', val)
     }
   }
 }

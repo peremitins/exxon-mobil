@@ -1,12 +1,24 @@
 .sidebar {
-  width: 265px;
-  flex: 0 0 265px;
-  padding: 22px 25px 22px 5px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: $sidebar-width;
+  flex: 0 0 $sidebar-width;
+  padding: 22px 25px;
+  background-color: $white;
+  box-shadow: 0px 0px 30px rgba(229, 229, 229, 0.4);
+  z-index: 1;
 
   &__logo {
     width: 125px;
     height: 24px;
     margin-bottom: 48px;
+    transition: opacity $transition;
+    
+    &:hover {
+      opacity: .8;
+    }
   }
 
   &__main-menu {
@@ -22,9 +34,6 @@
     margin-bottom: 10px;
   }
 
-  &__link-wrapper {
-  }
-
   &__link-item {
     width: 100%;
     height: 40px;
@@ -37,6 +46,15 @@
     height: 100%;
     padding-left: 26px;
     font-size: 15px;
+    transition: all $transition;
+    
+    &:hover {
+      color: $text-brand;
+      
+      &::before {
+        background-color: $brand-primary;
+      }
+    }
     
     &::before {
       content: '';
@@ -48,6 +66,7 @@
       height: 4px;
       border-radius: 50%;
       background-color: $text-secondary;
+      transition: all $transition;
     }
     
     &.router-link-exact-active {
@@ -57,8 +76,5 @@
         background-color: $brand-primary;
       }
     }
-  }
-
-  &__menu-settings {
   }
 }

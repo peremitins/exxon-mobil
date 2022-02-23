@@ -27,6 +27,7 @@ button {
   background-color: transparent;
   border: none;
   white-space: nowrap;
+  padding: 0;
   cursor: pointer;
 }
 
@@ -41,6 +42,91 @@ img {
   max-width: 100%;
 }
 
+// grid
+
+.title {
+  font-weight: 600;
+  font-size: 19px;
+  color: #1A1717;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: 14px;
+  line-height: 20px;
+  color: $text-secondary;
+  margin-bottom: 4px;
+}
+
+.row-1 {
+  grid-area: row_1;
+}
+.row-2 {
+  grid-area: row_2;
+}
+.row-3 {
+  grid-area: row_3;
+}
+.row-4 {
+  grid-area: row_4;
+}
+.row-5 {
+  grid-area: row_5;
+}
+.row-6 {
+  grid-area: row_6;
+}
+.row-7 {
+  grid-area: row_7;
+}
+.row-8 {
+  grid-area: row_8;
+}
+.row-9 {
+  grid-area: row_9;
+}
+.row-10 {
+  grid-area: row_10;
+}
+.row-11 {
+  grid-area: row_11;
+}
+.row-12 {
+  grid-area: row_12;
+}
+.row-13 {
+  grid-area: row_13;
+}
+.row-14 {
+  grid-area: row_14;
+}
+
+.link-external {
+  label {
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+      background: url(../img/svg/ic24_external.svg) center no-repeat;
+    }
+  }
+  
+  a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// input
+
 [type="search"] {
   outline-offset: 0;
   outline: transparent;
@@ -51,6 +137,7 @@ img {
   }
 }
 
+input,
 input[type="text"],
 input[type="tel"],
 input[type="email"],
@@ -65,7 +152,7 @@ textarea {
   }
 
   &:focus {
-    
+    outline: none;
 
     &::placeholder {
       
@@ -73,76 +160,463 @@ textarea {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
 
-.container {
-  max-width: 1440px;
-  padding: 0 20px;
-  margin: 0 auto;
+.main-content {
+  width: 100%;
+  padding: 0px 30px 0 $sidebar-width + 30;
 }
 
 .field {
   background: $bg-input-field;
   border-radius: 6px;
-}
-
-// v-select
-
-.v-select {
-  background: $bg-input-field;
-  border-radius: 6px;
-}
-
-.v-select .vs__dropdown-toggle {
   border: none;
-  input {
-    border: none;
+  height: 36px;
+  width: 100%;
+  padding: 7px 13px;
+  font-size: 15px;
+  color: #1A1717;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background-color $transition;
+  
+  &.icon {
+    padding-left: 36px;
+  }
+  
+  &.icon-right {
+    padding-right: 26px;
+  }
+  
+  &:hover {
+    background-color: #f0f0f0;
   }
 }
 
-.v-select .vs__dropdown-menu {
-  border: none;
-  box-shadow: 0px 0px 30px rgba(26, 23, 23, 0.15);
-  border-radius: 6px;
-  
-  .vs__dropdown-option {
-    padding: 9px 20px;
+.hidden {
+  display: none;
+}
+
+// calendar-icon
+
+.calendar-icon {
+  position: relative;
+  &::before {
+    content: url(../../assets/img/svg/ic24_calendar.svg);
+    position: absolute;
+    top: 50%;
+    left: 7px;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.percent-icon {
+  position: relative;
+  display: flex;
+  width: 94px;
+  &::before {
+    content: url(../../assets/img/svg/percent.svg);
+    position: absolute;
+    top: 50%;
+    right: 7px;
+    transform: translateY(-50%);
+    width: 13px;
+    height: 15px;
+  }
+}
+
+.litres {
+  position: relative;
+  display: flex;
+  width: 150px;
+  &::before {
+    content: 'л';
+    position: absolute;
+    top: 50%;
+    right: 7px;
+    transform: translateY(-50%);
     font-size: 15px;
+    color: $text-secondary;
+  }
+}
+
+.calendar-icon-close {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+// textarea
+
+textarea {
+  background: $bg-input-field;
+  border-radius: 6px;
+  border: none;
+  font-size: 15px;
+  line-height: 22px;
+  color: $text-secondary;
+  min-height: 96px;
+  padding: 7px 13px;
+  resize: vertical;
+  width: 100%;
+  transition: background-color $transition;
+  
+  &:hover {
+    background-color: #f0f0f0;
+  }
+}
+
+.divider {
+  padding-bottom: 14px;
+  border-bottom: 1px solid $divider;
+}
+
+// multiselect
+.multiselect {
+  
+  min-height: 36px!important;
+  background-color: $bg-input-field;
+  border-radius: 6px;
+  cursor: pointer;
+  
+  &:hover {
+    .multiselect__input,
+    .multiselect__single,
+    .multiselect__tags {
+        background-color: #F0F0F0;
+    }
+  }
+
+  &.multiselect--active {
+    .multiselect__placeholder {
+      display: block;
+    }
+  }
+  
+  .multiselect__content-wrapper {
+    box-shadow: 0px 0px 30px rgba(26, 23, 23, 0.15);
+    border-radius: 6px;
+    border: none;
+    padding: 9px 0;
+    transition: all .2s ease;
+  }
+  
+  .multiselect__select:before {
+    content: url(../../assets/img/svg/ic24_arrow_down.svg);
+    width: 24px;
+    height: 24px;
+    color: transparent;
+    top: 0;
+    border: none;
+  }
+  
+  .multiselect__option--selected:after {
+    content: url(../../assets/img/svg/tick-red.svg)!important;
+    top: 50%;
+    width: auto;
+    height: 24px;
+    transform: translateY(-50%);
+  }
+  .multiselect__option {
+    font-size: 14px;
+    color: $text-primary;
+    min-height: 36px;
+    padding: 10px 20px;
     
     &:hover {
       background-color: $bg-input-field;
-      color: $text-primary;
     }
+  }
+  .multiselect__placeholder {
+    font-size: 15px;
+    color: $text-secondary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    padding-left: 5px;
+  }
+  .multiselect__tags {
+    display: block!important;
+    min-height: 36px;
+    height: 36px;
+    padding: 8px 40px 0 8px;
+    border-radius: 6px;
+    border: none;
+    background-color: $bg-input-field;
+  }
+  .multiselect__select {
+    display: flex;
+    height: 36px;
+  }
+  .multiselect__tags-wrap {
+    // display: none!important;
+  }
+  .multiselect__option--selected {
+    background-color: #fff;
+    color: $text-brand;
+    font-weight: 400;
+    font-size: 14px;
     
-    &--highlight {
-      background-color: $bg-input-field;
-      color: $text-primary;
+    &:hover {
+      background-color: $bg-input-field!important;
     }
+  }
+  .multiselect__input,
+  .multiselect__single {
+    font-size: 15px;
+    color: $text-primary;
+    background-color: inherit;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .multiselect__option--highlight {
+    background-color: #fff;
+    color: $text-primary;
+  }
+  .multiselect__option--selected.multiselect__option--highlight:after,
+  .multiselect__option--highlight:after {
+    content: '';
+  }
+  .multiselect__option--selected.multiselect__option--highlight,
+  .multiselect__option--selected.multiselect__option--highlight:after {
+    background-color: transparent;
+    color: $text-brand;
+    
   }
 }
 
-.v-select input.vs__search,
-.v-select input.vs__search:focus {
-  padding: 0 13px;
-  line-height: 32px!important;
+// custom radio button
+
+label.radio {
+  cursor: pointer;
+  position: relative;
+  padding-left: 28px;
+  font-size: 15px;
+  transition: background-color $transition;
+  
+  &:hover {
+    input:checked ~ .radio__radio-button {
+      background-color: #F20C17;
+    }
+  }
+  
+  input {
+    display: none;
+    
+    &:checked ~ .radio__radio-text {
+      display: block;
+    }
+  }
+  
+  .radio__radio-text {
+    display: none;
+  }
+
+  .radio__radio-button {
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    background-color: #F0F0F0;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    transition: background-color $transition;
+    
+    &:hover {
+      background-color: #E0E0E0;
+    }
+  }
+  
+  .radio__radio-button::after {
+    content: "";
+    display: block;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  input:checked ~ .radio__radio-button {
+    background-color: $brand-primary;
+    border: none;
+  }
+
+  :checked ~ .radio__radio-button::after {
+    opacity: 1;
+  }
+}
+
+// custom checkbox
+
+.custom-checkbox>input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.custom-checkbox>span {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  font-weight: normal;
   font-size: 15px;
   line-height: 22px;
-  color: $text-primary;
+  color: #1A1717;
+  cursor: pointer;
 }
-.v-select .vs__selected {
-  padding: 0 11px;
+.custom-checkbox>span::before {
+  content: '';
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border-radius: 6px;
+  background-color: #F0F0F0;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 57%;
+}
+.custom-checkbox>input:not(:disabled):not(:checked)+span:hover::before {
+  background-color: #EBEBEB;
+}
+.custom-checkbox>input:not(:disabled)+span:hover::before {
+  background-color: #F20C17;
+}
+.custom-checkbox>input:checked+span::before {
+  background-color: $brand-primary;
+  background-image: url(../img/svg/tick.svg);
+}
+.custom-checkbox>input:disabled+span::before {
+  background-color: rgba(26, 23, 23, 0.44);;
 }
 
-.v-select .vs__selected-options {
+// add-btn 
+
+.add-btn {
+  display: flex;
   align-items: center;
-  flex-wrap: nowrap;
+  width: fit-content;
+  height: 36px;
+  padding: 0 16px 0 8px;
+  background-color: #F7F7F7;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 15px;
+  color: rgba(26, 23, 23, 0.8);
+  line-height: 20px;
+  cursor: pointer;
+  transition: background-color $transition;
+  
+  svg {
+    width: 24px;
+    height: 24px;
+    margin-right: 3px;
+    margin-left: 2px;
+  }
 }
 
-.v-select .toggle-arrow {
-  width: 24px;
-  height: 24px;
-  background: url(../img/svg/ic24_arrow_down.svg) center no-repeat;
+// chips
+
+.chips {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 186px;
+  height: 36px;
+  padding-left: 30px;
+  line-height: 22px;
+  background-color: $bg-input-field;
+  border-radius: 6px;
+  font-size: 15px;
+  color: $text-primary;
+  transition: background-color $transition;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: #f0f0f0;
+  }
+  
+  &__delete {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    
+    svg {
+      position: absolute;
+      top: 50%;
+      right: 3px;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+    }
+  }
+  
+  span {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 12px;
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    background: url(../img/svg/ic24_file.svg) center no-repeat;
+  }
 }
 
+// scroll styles
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #e4e4e4;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  background-color: #8b8b8b;
+  box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.7);
+}
+
+// calendar custom
+
+.vc-highlights {
+  & ~ .vc-day-content.vc-focusable {
+    background-color: $brand-primary;
+    border: none;
+    box-shadow: none;
+  }
+}

@@ -1,9 +1,9 @@
 <template>
   <aside class="sidebar">
     
-    <div class="sidebar__logo">
+    <router-link to="/" class="sidebar__logo">
       <img src="@/assets/img/svg/logo.svg" alt="Логотип">
-    </div>
+    </router-link>
     
     <nav class="sidebar__main-menu">
       <div class="sidebar__title">Основное</div>
@@ -12,7 +12,7 @@
           <router-link to="/" class="sidebar__link">Список объектов</router-link>
         </li>
         <li class="sidebar__link-item">
-          <router-link to="#2" class="sidebar__link">Export for agency</router-link>
+          <router-link to="/2" class="sidebar__link">Export for agency</router-link>
         </li>
       </ul>
     </nav>

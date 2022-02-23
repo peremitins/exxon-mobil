@@ -1,0 +1,39 @@
+.brand-assessment {
+  padding: 30px 0;
+  
+  &__title {
+    margin-bottom: 3px;
+    line-height: 27px;
+  }
+  
+  &__subtitle {
+    margin-bottom: 30px;
+  }
+  
+  &__row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    height: 36px;
+    align-self: end;
+    
+    .column ~ .column {
+      margin-left: 30px;
+    }
+  }
+  
+  &__row-year {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+  }
+  
+  &__row-audit-completed {
+    font-size: 15px;
+    line-height: 22px;
+  }
+  &__percent-completed {
+    font-size: 15px;
+    line-height: 22px;
+  }
+}
