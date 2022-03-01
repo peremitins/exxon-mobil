@@ -1,6 +1,7 @@
 # exxon-mobile
 
-## https://github.com/allfreelance/exxon-mobil
+## https://allfreelance.github.io/exxon-mobil/
+
 
 ## Project setup
 ```
