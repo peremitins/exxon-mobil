@@ -1,6 +1,5 @@
 <template>
   <aside class="sidebar">
-    
     <router-link to="/" class="sidebar__logo">
       <img src="@/assets/img/svg/logo.svg" alt="Логотип">
     </router-link>
@@ -43,7 +42,6 @@
         </li>
       </ul>
     </nav>
-    
   </aside>
 </template>
 

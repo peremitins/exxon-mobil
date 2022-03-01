@@ -26,6 +26,19 @@
       "row_8 row_9 row_10"
     ;
     
+    @media (max-width: $xl) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: 
+        "row_1 row_1"
+        "row_2 row_2"
+        "row_3 row_3"
+        "row_4 row_5"
+        "row_6 row_7"
+        "row_8 row_9"
+        "row_10 row_10"
+      ;
+    }
+    
     .row.row-10 {
       justify-content:flex-start;
       padding-top: 24px;
@@ -40,6 +53,10 @@
       
       .common-data__slider-swiper {
         position: relative;
+        
+        @media (max-width: $xl) {
+          max-width: 330px;
+        }
       }
       
       &-close {
@@ -133,6 +150,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     column-gap: 30px;
+    padding-top: 20px;
     grid-template-areas: 
       "row_1 row_1 row_1"
       "row_2 row_3 ."
@@ -143,7 +161,20 @@
       "row_13 . ."
       "row_14 row_14 row_14"
     ;
-    padding-top: 20px;
+    
+    @media (max-width: $xl) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: 
+        "row_1 row_1"
+        "row_2 row_3"
+        "row_4 row_5"
+        "row_6 row_7"
+        "row_8 row_9"
+        "row_10 row_11"
+        "row_13 row_12"
+        "row_14 row_14"
+      ;
+    }
     
     .row-14 {
       margin-top: 14px;
@@ -308,11 +339,19 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     column-gap: 30px;
+    padding-top: 20px;
     grid-template-areas: 
       "row_1 row_1 row_1"
       "row_2 row_2 ."
     ;
-    padding-top: 20px;
+    
+    @media (max-width: $xl) {
+      grid-template-columns: 1fr;
+      grid-template-areas: 
+        "row_1"
+        "row_2"
+      ;
+    }
     
     .row-2 {
       margin-bottom: 9px;

@@ -33,4 +33,8 @@
 
 .tabs-details {
   padding-right: 65px;
+  
+  @media (max-width: $xl) {
+    padding-right: 0;
+  }
 }

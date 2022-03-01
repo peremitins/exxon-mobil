@@ -110,9 +110,8 @@ export default {
 </script>
 
 <style lang="scss">
-.home {
-  min-height: 110vh;
-}
+@import '../assets/scss/global/vars.scss';
+
 .table-container {
   display: block;
   margin: 2em auto;
@@ -129,6 +128,14 @@ export default {
   width: fit-content;
   border-bottom: 1px solid #EBEBEB;
   transition: 0.5s;
+  
+  @media (max-width: $xl) {
+    grid-template-columns: 85px minmax(110px, 1000px) minmax(145px, 150px) 145px;
+  }
+  
+  @media (max-width: $md) {
+    grid-template-columns: 85px 350px 150px 145px;
+  }
   
   &.link {
     position: relative;
