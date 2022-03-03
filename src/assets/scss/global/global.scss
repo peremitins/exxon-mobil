@@ -456,6 +456,10 @@ label.radio {
     &:hover {
       background-color: #E0E0E0;
     }
+    
+    &:active {
+      background-color: #FFECEC;
+    }
   }
   
   .radio__radio-button::after {
@@ -517,8 +521,14 @@ label.radio {
 .custom-checkbox>input:not(:disabled):not(:checked)+span:hover::before {
   background-color: #EBEBEB;
 }
+.custom-checkbox>input:not(:disabled):not(:checked)+span:active::before {
+  background-color: #FFECEC;
+}
 .custom-checkbox>input:not(:disabled)+span:hover::before {
   background-color: #F20C17;
+}
+.custom-checkbox>input:not(:disabled)+span:active::before {
+  background-color: #E8000B;
 }
 .custom-checkbox>input:checked+span::before {
   background-color: $brand-primary;
@@ -545,11 +555,22 @@ label.radio {
   cursor: pointer;
   transition: background-color $transition;
   
+  &:active {
+    color: #FE000C;
+    background-color: #FFECEC!important;
+    
+    svg {
+      fill: #FE000C;
+    }
+  }
+  
   svg {
     width: 24px;
     height: 24px;
     margin-right: 3px;
     margin-left: 2px;
+    fill:#1A1717;
+    fill-opacity: 0.8;
   }
 }
 

@@ -40,5 +40,10 @@
   
   .btn__cancel {
     margin-right: 15px;
+    
+    &:active {
+      color: #FE000C;
+      background-color: #FFECEC;
+    }
   }
 }

@@ -60,6 +60,14 @@
       }
     }
     
+    &:active {
+      color: #F20C17;
+      
+      &::before {
+        background-color: #F20C17;
+      }
+    }
+    
     &::before {
       content: '';
       position: absolute;

@@ -12,7 +12,10 @@
     transition: border-bottom .2s ease, color .2s ease;
     
     &:hover {
-      color: red;
+      color: #E8000B;
+    }
+    &:active {
+      color: #FE000C;
     }
     
     & + & {

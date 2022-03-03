@@ -88,6 +88,11 @@
     &:hover {
       background-color: #F0F0F0;
     }
+    
+    &:active {
+      color: #FE000C;
+      background-color: #FFECEC;
+    }
   }
   
   &__btn--accept {
@@ -97,6 +102,10 @@
     
     &:hover {
       background-color: #F20C17;
+    }
+    
+    &:active {
+      background-color: #E8000B;
     }
   }
   

@@ -64,8 +64,17 @@
       color: $white;
       background-color: $brand-primary;
       
+      svg {
+        fill: #fff;
+        fill-opacity: 1;
+      }
+      
       &:hover {
         background-color: #F20C17;
+      }
+      
+      &:active {
+        background-color: #E8000B!important;
       }
     }
   }

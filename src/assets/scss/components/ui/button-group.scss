@@ -9,6 +9,10 @@
       color: $text-brand;
     }
     
+    &:active {
+      background-color: $bg-button-group;
+    }
+    
     &:first-child {
       border-radius: 6px 0px 0px 6px;
     }

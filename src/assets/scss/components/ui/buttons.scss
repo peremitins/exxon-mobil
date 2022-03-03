@@ -25,6 +25,10 @@
       background-color: #F20C17;
     }
     
+    &:active {
+      background-color: #E8000B;
+    }
+    
     &::before {
       content: '';
       position: absolute;

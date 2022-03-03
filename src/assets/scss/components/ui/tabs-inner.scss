@@ -49,5 +49,9 @@
     &:hover {
       color: $text-brand;
     }
+    
+    &:active {
+      background-color: #FFECEC;
+    }
   }
 }
