@@ -1,6 +1,10 @@
 .m1c {
   overflow: hidden;
   
+  @media (max-width: $sm) {
+    overflow: visible;
+  }
+  
   &__header {
     display: grid;
     grid-template-columns: auto auto;
@@ -58,6 +62,7 @@
   &__code {
     font-size: 15px;
     color: $text-secondary;
+    line-height: 22px;
     grid-area: code;
   }
   

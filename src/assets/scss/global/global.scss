@@ -212,6 +212,10 @@ h1, h2, h3, h4, h5, h6, p {
   &:hover {
     background-color: #f0f0f0;
   }
+  
+  @media (max-width: $sm) {
+    font-size: 12px;
+  }
 }
 
 .hidden {
@@ -292,6 +296,10 @@ textarea {
   width: 100%;
   transition: background-color $transition;
   
+  @media (max-width: $sm) {
+    font-size: 12px;
+  }
+  
   &:hover {
     background-color: #f0f0f0;
   }
@@ -357,6 +365,10 @@ textarea {
     &:hover {
       background-color: $bg-input-field;
     }
+    
+    @media (max-width: $sm) {
+      font-size: 12px;
+    }
   }
   .multiselect__placeholder {
     font-size: 15px;
@@ -366,6 +378,10 @@ textarea {
     text-overflow: ellipsis;
     width: 100%;
     padding-left: 5px;
+    
+    @media (max-width: $sm) {
+      font-size: 12px;
+    }
   }
   .multiselect__tags {
     display: block!important;
@@ -392,6 +408,10 @@ textarea {
     &:hover {
       background-color: $bg-input-field!important;
     }
+    
+    @media (max-width: $sm) {
+      font-size: 12px;
+    }
   }
   .multiselect__input,
   .multiselect__single {
@@ -401,6 +421,10 @@ textarea {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    
+    @media (max-width: $sm) {
+      font-size: 12px;
+    }
   }
   .multiselect__option--highlight {
     background-color: #fff;
@@ -663,4 +687,11 @@ label.radio {
     border: none;
     box-shadow: none;
   }
+}
+
+// ymaps-2-1-79-map
+
+.ymaps-2-1-79-map {
+  width: 100%!important;
+  height: 100%!important;
 }

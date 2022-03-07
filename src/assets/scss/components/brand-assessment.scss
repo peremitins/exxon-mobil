@@ -1,6 +1,10 @@
 .brand-assessment {
   padding: 30px 0;
   
+  @media (max-width: $sm) {
+    padding: 30px 0 0 0;
+  }
+  
   &__title {
     margin-bottom: 3px;
     line-height: 27px;
@@ -19,18 +23,22 @@
     
     .column ~ .column {
       margin-left: 30px;
+      
+      @media (max-width: $sm) {
+        margin-left: 10px;
+      }
     }
   }
   
   &__row-year {
     font-weight: 600;
     font-size: 15px;
-    line-height: 20px;
+    line-height: 1;
   }
   
   &__row-audit-completed {
     font-size: 15px;
-    line-height: 22px;
+    line-height: 1;
   }
   &__percent-completed {
     font-size: 15px;

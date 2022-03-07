@@ -33,12 +33,12 @@ export default {
     };
   },
   created(){
-    this.tabs = this.$children;
+    this.tabs = this.$children
   },
   methods:{
     selectTab(selectedTab) {
       this.tabs.forEach(tab => {
-        tab.isActive = (tab.name == selectedTab.name);
+        tab.isActive = (tab.name == selectedTab.name)
       });
     }
   }

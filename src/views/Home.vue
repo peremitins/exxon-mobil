@@ -117,6 +117,10 @@ export default {
   margin: 2em auto;
   width: 100%;
   overflow-x: auto;
+  
+  @media (max-width: $sm) {
+    margin: 1em auto;
+  }
 }
 
 
@@ -135,6 +139,10 @@ export default {
   
   @media (max-width: $md) {
     grid-template-columns: 85px 350px 150px 145px;
+  }
+  
+  @media (max-width: $sm) {
+    grid-template-columns: 45px 280px 120px 120px;
   }
   
   &.link {
@@ -185,6 +193,10 @@ export default {
       left: 0;
       width: 16px;
       height: 16px;
+      
+      @media (max-width: $sm) {
+        top: 13px;
+      }
     }
   }
   
@@ -192,6 +204,17 @@ export default {
     font-size: 13px;
     line-height: 18px;
     color: rgba(26, 23, 23, 0.6);
+    
+    @media (max-width: $sm) {
+      font-size: 11px;
+    }
+  }
+  
+  @media (max-width: $sm) {
+    align-self: center;
+    padding: 5px 5px 5px 0;
+    font-size: 12px;
+    line-height: 14px;
   }
 }
 </style>

@@ -708,12 +708,12 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
-      this.$refs.mySwiper.updateSwiper();
+      this.$refs.mySwiper.updateSwiper()
     });
   },
   methods: {
     changeSelectVal(val) {
-      this.selected = val;
+      this.selected = val
     }
   }
 }

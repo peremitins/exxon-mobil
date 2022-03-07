@@ -1,5 +1,14 @@
 <template>
   <header class="header">
+    <button
+      class="header__burger"
+      type="button"
+      @click="toggleMenu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <div v-if="this.$route.path === '/'" class="header__title">
       Список объектов
     </div>
@@ -19,6 +28,11 @@
 
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
+  methods: {
+    toggleMenu() {
+      this.$store.commit('CLOSE_MENU')
+    }
+  }
 }
 </script>

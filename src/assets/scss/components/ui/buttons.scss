@@ -40,4 +40,8 @@
       background: url(../img/svg/btn-save.svg);
     }
   }
+  
+  @media (max-width: $sm) {
+    font-size: 12px;
+  }
 }

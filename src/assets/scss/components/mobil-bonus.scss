@@ -11,4 +11,28 @@
     'row_6 row_6 .'
     'row_7 row_7 .'
   ;
+  
+  @media (max-width: $xl) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+      'row_1 row_2'
+      'row_3 row_4'
+      'row_5 row_6'
+      'row_6 row_6'
+      'row_7 row_7'
+    ;
+  }
+  
+  @media (max-width: $md) {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      'row_1'
+      'row_2'
+      'row_3'
+      'row_4'
+      'row_5'
+      'row_6'
+      'row_7'
+    ;
+  }
 }

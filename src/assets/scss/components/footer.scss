@@ -14,4 +14,9 @@
   @media (max-width: $lg) {
     margin-left: 0;
   }
+  
+  @media (max-width: $md) {
+    height: auto;
+    padding: 15px;
+  }
 }

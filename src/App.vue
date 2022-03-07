@@ -6,7 +6,11 @@
       @acceptModal="acceptModal"
     />
     <div class="main">
-      <Sidebar />
+      <Sidebar class="desktop" />
+      <Sidebar
+        class="mobile"
+        :class="{ 'overlay': this.$store.state.isMenuShow }"
+      />
       <div class="main-content">
         <router-view class="pages" />
       </div>
@@ -28,15 +32,37 @@ export default {
   },
   data() {
     return {
-      isModalOpen: false
+      isModalOpen: false,
+      test: ''
     }
   },
   methods: {
     closeModal(val) {
-      this.isModalOpen = val;
+      this.isModalOpen = val
     },
     acceptModal(val) {
-      this.isModalOpen = val;
+      this.isModalOpen = val
+    }
+  },
+  mounted() {
+    window.addEventListener('resize', () => {
+      if (this.$store.state.isMenuShow) {
+        this.$store.commit('CLOSE_MENU')
+      }
+    })
+  },
+  computed: {
+    overflowBody() {
+      return this.$store.state.isMenuShow
+    }
+  },
+  watch: {
+    overflowBody() {
+      if(this.overflowBody){
+        document.documentElement.style.overflow = 'hidden'
+        return
+      }
+      document.documentElement.style.overflow = 'auto'
     }
   }
 }

@@ -1,12 +1,12 @@
 .sales {
   padding: 30px 0;
   
-  &__tabs {
-    margin-bottom: 14px;
+  @media (max-width: $sm) {
+    padding: 30px 0 0 0;
   }
   
-  &__content {
-    
+  &__tabs {
+    margin-bottom: 14px;
   }
   
   // volumes
@@ -44,6 +44,11 @@
     flex-wrap: wrap;
     padding-top: 20px;
     padding-bottom: 20px;
+    
+    @media (max-width: 700px) {
+      flex-direction: column;
+      padding-bottom: 0px;
+    }
   }
   
   &__title {
@@ -51,12 +56,26 @@
     font-size: 19px;
     line-height: 27px;
     margin-bottom: 27px;
+    
+    @media (max-width: $sm) {
+      margin-bottom: 10px;
+    }
   }
   
   &__products-item {
     display: flex;
     flex-direction: column;
     flex: 1 1 50%;
+    
+    &:first-child {
+      margin-bottom: 10px;
+    }
+    
+    .custom-checkbox > span {
+      @media (max-width: $sm) {
+        font-size: 12px;
+      }
+    }
   }
   
   .custom-checkbox {
@@ -64,6 +83,10 @@
   }
   .custom-checkbox + .custom-checkbox {
     margin-top: 15px;
+    
+    @media (max-width: $sm) {
+      margin-top: 5px;
+    }
   }
   
   &__focus-product {
@@ -73,7 +96,13 @@
     max-width: 515px;
     
     & + & {
-      margin-top: 15px;
+      margin-top: 5px;
+    }
+    
+    @media (max-width: $sm) {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 5px;
     }
   }
   
@@ -81,5 +110,9 @@
     margin-right: 35px;
     font-size: 15px;
     line-height: 22px;
+    
+    @media (max-width: $sm) {
+      font-size: 12px;
+    }
   }
 }

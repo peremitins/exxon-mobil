@@ -37,6 +37,10 @@
     }
   }
   
+  @media (max-width: $sm) {
+    gap: 10px 30px;
+  }
+  
   .row-1 {
     grid-area: row_1;
   }

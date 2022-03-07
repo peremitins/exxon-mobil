@@ -85,6 +85,10 @@
         @media (max-width: $xl) {
           max-width: 330px;
         }
+        
+        @media (max-width: $sm) {
+          max-width: 285px;
+        }
       }
       
       &-close {
@@ -103,6 +107,10 @@
         svg {
           width: 32px;
           height: 32px;
+        }
+        
+        @media (max-width: $sm) {
+          right: -16px;
         }
       }
       
@@ -137,6 +145,17 @@
         }
       }
       
+      .common-data__slider-checkbox {
+        position: absolute;
+        top: 230px;
+        left: 180px;
+        z-index: 1;
+        
+        @media (max-width: $sm) {
+          top: 200px;
+        }
+      }
+      
       @media (min-width: 768px) {
         .swiper-button-prev:hover,
         .swiper-button-next:hover {
@@ -144,11 +163,10 @@
         }
       }
       
-      .common-data__slider-checkbox {
-        position: absolute;
-        top: 230px;
-        left: 180px;
-        z-index: 1;
+      &.row {
+        @media (max-width: $sm) {
+          margin-bottom: 0;
+        }
       }
     }
   }
@@ -403,6 +421,10 @@
         padding: 7px 5px;
         width: 123px;
         font-size: 13px;
+        
+        @media (max-width: $sm) {
+          font-size: 12px;
+        }
       }
     }
     

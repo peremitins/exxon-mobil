@@ -12,6 +12,11 @@
     text-align: center;
     letter-spacing: 30px;
     color: #FE000C;
+    
+    @media (max-width: $md) {
+      font-size: 88px;
+      line-height: 165px;
+    }
   }
   
   &__subtitle {
@@ -20,6 +25,11 @@
     line-height: 35px;
     text-align: center;
     margin-bottom: 72px;
+    
+    @media (max-width: $md) {
+      font-size: 22px;
+      margin-bottom: 42px;
+    }
   }
   
   &__btn {

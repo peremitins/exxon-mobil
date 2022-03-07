@@ -21,7 +21,7 @@ export default {
     }
   },
   mounted() {
-    this.isActive = this.selected;
+    this.isActive = this.selected
   }
 }
 </script>
