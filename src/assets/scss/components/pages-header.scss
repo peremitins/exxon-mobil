@@ -1,14 +1,25 @@
 .m1c {
   overflow: hidden;
+  
   &__header {
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto auto;
     gap: 0 0;
-    grid-template-areas: 
-      ". ."
-      ". .";
     margin-bottom: 5px;
+    grid-template-areas: 
+      "title btn"
+      "code date"
+    ;
+    
+    @media (max-width: $lg) {
+      grid-template-areas: 
+        "title title"
+        "code date"
+        "btn btn"
+      ;
+      gap: 14px 0;
+    }
   }
   
   &__title {
@@ -18,17 +29,36 @@
     line-height: 35px;
     color: $text-primary;
     margin-bottom: 11px;
+    grid-area: title;
+    
+    @media (max-width: $xl) {
+      font-size: 24px;
+    }
+    
+    @media (max-width: $md) {
+      margin-bottom: 0;
+      max-width: 100%;
+      font-size: 20px;
+      line-height: 24px;
+    }
   }
   
   &__btn-wrapper {
     display: flex;
     align-items: flex-start;
     justify-self: end;
+    grid-area: btn;
+    
+    @media (max-width: 375px) {
+      justify-self: auto;
+      justify-content: space-between;
+    }
   }
   
   &__code {
     font-size: 15px;
     color: $text-secondary;
+    grid-area: code;
   }
   
   &__update-date {
@@ -36,6 +66,7 @@
     line-height: 22px;
     color: $text-secondary;
     justify-self: end;
+    grid-area: date;
   }
   
   .btn__cancel {
@@ -44,6 +75,21 @@
     &:active {
       color: #FE000C;
       background-color: #FFECEC;
+    }
+    
+    @media (max-width: $lg) {
+      margin-right: 8px;
+      padding: 6px 10px;
+    }
+  }
+  
+  .btn__save {
+    @media (max-width: $lg) {
+      padding: 6px 10px 6px 24px;
+      
+      &::before {
+        left: 1px;
+      }
     }
   }
 }

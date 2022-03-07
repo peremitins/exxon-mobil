@@ -98,9 +98,7 @@
           />
         </div>
         <div class="row row-10 common-data__slider">
-          <ButtonAdd
-            bgColor="#F7F7F7" bgHover="#F0F0F0"
-          >
+          <ButtonAdd>
             <svg>
               <use xlink:href="../assets/img/svg/sprite.svg#ic24_bttn_upload" />
             </svg>
@@ -335,7 +333,6 @@
           </div>
           <ButtonAdd
             class="common-data__add-btn add-btn"
-            bgColor="#F7F7F7" bgHover="#F0F0F0"
           >
             <svg>
               <use xlink:href="../assets/img/svg/sprite.svg#ic24_bttn_add" />
@@ -372,7 +369,6 @@
           </div>
           <ButtonAdd
             class="common-data__add-btn add-btn"
-            bgColor="#F7F7F7" bgHover="#F0F0F0"
           >
             <svg>
               <use xlink:href="../assets/img/svg/sprite.svg#ic24_bttn_add" />
@@ -393,7 +389,6 @@
           </div>
           <ButtonAdd
             class="common-data__add-btn add-btn"
-            bgColor="#F7F7F7" bgHover="#F0F0F0"
           >
             <svg>
               <use xlink:href="../assets/img/svg/sprite.svg#ic24_bttn_add" />
@@ -430,15 +425,17 @@
               </span>
             </template>
           </multiselect>
-          <masked-input
-            class="common-data__contacts-input field"
-            type="text"
-            mask="11:11 — 11:11"
-            placeholder="ЧЧ:ММ — ЧЧ:ММ"
-          />
-          <svg>
-            <use xlink:href="../assets/img/svg/sprite.svg#ic32_cancel" />
-          </svg>
+          <div class="common-data__schedule-input-wrapper">
+            <masked-input
+              class="common-data__schedule-input field"
+              type="text"
+              mask="11:11 — 11:11"
+              placeholder="ЧЧ:ММ — ЧЧ:ММ"
+            />
+            <svg>
+              <use xlink:href="../assets/img/svg/sprite.svg#ic32_cancel" />
+            </svg>
+          </div>
         </div>
         
         <div class="common-data__schedule-row">
@@ -462,20 +459,21 @@
               </span>
             </template>
           </multiselect>
-          <masked-input
-            class="common-data__contacts-input field"
-            type="text"
-            mask="11:11 — 11:11"
-            placeholder="ЧЧ:ММ — ЧЧ:ММ"
-          />
-          <svg>
-            <use xlink:href="../assets/img/svg/sprite.svg#ic32_cancel" />
-          </svg>
+          <div class="common-data__schedule-input-wrapper">
+            <masked-input
+              class="common-data__schedule-input field"
+              type="text"
+              mask="11:11 — 11:11"
+              placeholder="ЧЧ:ММ — ЧЧ:ММ"
+            />
+            <svg>
+              <use xlink:href="../assets/img/svg/sprite.svg#ic32_cancel" />
+            </svg>
+          </div>
         </div>
         
         <ButtonAdd
           class="common-data__add-btn add-btn"
-          bgColor="#F7F7F7" bgHover="#F0F0F0"
         >
           <svg>
             <use xlink:href="../assets/img/svg/sprite.svg#ic24_bttn_add" />
@@ -591,9 +589,7 @@
           </div>
         </div>
         <div class="row row-7">
-          <ButtonAdd
-            bgColor="#F7F7F7" bgHover="#F0F0F0"
-          >
+          <ButtonAdd>
             <svg>
               <use xlink:href="../assets/img/svg/sprite.svg#ic24_bttn_upload" />
             </svg>

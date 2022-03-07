@@ -5,6 +5,10 @@
   height: 64px;
   margin-bottom: 20px;
   
+  @media (max-width: $lg) {
+    margin-bottom: 0;
+  }
+  
   &__title {
     font-weight: 600;
     font-size: 19px;

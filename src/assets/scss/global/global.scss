@@ -49,6 +49,10 @@ img {
   font-size: 19px;
   color: #1A1717;
   margin-bottom: 16px;
+  
+  @media (max-width: $lg) {
+    margin-bottom: 0px;
+  }
 }
 
 .subtitle {
@@ -634,6 +638,10 @@ label.radio {
 ::-webkit-scrollbar {
   width: 8px;
   height: 4px;
+}
+
+.tabs__tab-wrapper::-webkit-scrollbar {
+  height: 2px;
 }
 
 ::-webkit-scrollbar-track {
