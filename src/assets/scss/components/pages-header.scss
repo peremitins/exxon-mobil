@@ -64,6 +64,10 @@
     color: $text-secondary;
     line-height: 22px;
     grid-area: code;
+    
+    @media (max-width: $sm) {
+      font-size: 12px;
+    }
   }
   
   &__update-date {
@@ -72,6 +76,10 @@
     color: $text-secondary;
     justify-self: end;
     grid-area: date;
+    
+    @media (max-width: $sm) {
+      font-size: 12px;
+    }
   }
   
   .btn__cancel {

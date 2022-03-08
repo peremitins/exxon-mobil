@@ -2,7 +2,7 @@
   <div class="filter-block">
     <div class="filter-block__row row-1">
       <label>
-        <input class="field" type="text" value="Поиск по ID, наименованию или адресу">
+        <input class="field" type="text" placeholder="Поиск по ID, наименованию или адресу">
       </label>
     </div>
     <div class="filter-block__row row-2">
