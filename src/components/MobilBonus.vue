@@ -14,13 +14,13 @@
     <div class="row row-2">
       <p class="mobil-bonus__subtitle subtitle">ФИО руководителя/менеджера (Name of Owner)</p>
       <label>
-        <input class="field" type="text" placeholder="ФИО">
+        <input class="field" type="text" onchange="blur()" placeholder="ФИО">
       </label>
     </div>
     <div class="row row-3">
       <p class="mobil-bonus__subtitle subtitle">E-mail для PIN-кода Mobil Бонус (E-mail of Owner)</p>
       <label>
-        <input class="field" type="email" placeholder="Email">
+        <input class="field" type="email" onchange="blur()" placeholder="Email">
       </label>
     </div>
     <div class="row row-4">
@@ -31,6 +31,7 @@
             class="field icon"
             :value="inputValue"
             v-on="inputEvents"
+            readonly
             placeholder="Укажите дату"
           />
           <button
@@ -53,6 +54,7 @@
             class="field icon"
             :value="inputValue"
             v-on="inputEvents"
+            readonly
             placeholder="Укажите дату"
           />
           <button

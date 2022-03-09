@@ -6,7 +6,7 @@
           {{ volume.name }}
         </div>
         <span class="sales__volume-value litres">
-          <input type="number" :value="volume.value" class="field icon-right">
+          <input type="number" onchange="blur()" :value="volume.value" class="field icon-right">
         </span>
       </div>
     </div>
@@ -31,7 +31,7 @@
             {{ focusProduct.name }}
           </p>
           <span class="sales__volume-value litres">
-            <input type="number" :value="focusProduct.value" class="field icon-right">
+            <input type="number" onchange="blur()" :value="focusProduct.value" class="field icon-right">
           </span>
         </div>
       </div>

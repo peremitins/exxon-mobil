@@ -19,7 +19,7 @@
         </div>
         <div v-if="audit.status" class="brand-assessment__percent-completed column">
           <span class="percent-icon">
-            <input type="number" :value="audit.percentCompleted" class="field icon-right">
+            <input type="number" onchange="blur()" :value="audit.percentCompleted" class="field icon-right">
           </span>
         </div>
       </div>

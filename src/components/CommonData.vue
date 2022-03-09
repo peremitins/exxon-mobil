@@ -30,6 +30,7 @@
             <input
               class="field"
               type="text"
+              onchange="blur()"
               value="Моbil 1 Центр Автосервис на Кропоткина (ТРИО ООО_ИП Саитова)"
               placeholder="Введите наименование точки"
             >
@@ -41,6 +42,7 @@
             <input
               class="field"
               type="text"
+              onchange="blur()"
               value="ИП Саитов И. О."
               placeholder="Введите наименование юридического лица"
             >
@@ -63,6 +65,7 @@
             <input
               class="field"
               type="text"
+              onchange="blur()"
               value="484618464956"
               placeholder="Введите ИНН"
             >
@@ -71,7 +74,12 @@
         <div class="row row-7 link-external">
           <p class="common-data__subtitle subtitle">Ссылка на L-360</p>
           <label>
-            <input class="field" type="text" value="www.l360.com">
+            <input
+              class="field"
+              type="text"
+              onchange="blur()"
+              value="www.l360.com"
+            >
             <router-link to="/" target="_blank" />
           </label>
         </div>
@@ -188,6 +196,7 @@
             <input
               class="field"
               type="text"
+              onchange="blur()"
               value="986526"
               placeholder="Введите индекс"
             >
@@ -199,6 +208,7 @@
             <input
               class="field"
               type="text"
+              onchange="blur()"
               value="Ленина"
               placeholder="Введите улицу"
             >
@@ -210,6 +220,7 @@
             <input
               class="field"
               type="text"
+              onchange="blur()"
               value="26"
               placeholder="Введите дом"
             >
@@ -221,6 +232,7 @@
             <input
               class="field"
               type="text"
+              onchange="blur()"
               value="5"
               placeholder="Введите строение / корпус"
             >
@@ -232,6 +244,7 @@
             <input
               class="field"
               type="text"
+              onchange="blur()"
               value="5"
               placeholder="Введите офис / помещение"
             >
@@ -243,6 +256,7 @@
             <input
               class="field"
               type="text"
+              onchange="blur()"
               value="55°33ʹ31,46ʺ"
               placeholder="Введите широту"
             >
@@ -254,6 +268,7 @@
             <input
               class="field"
               type="text"
+              onchange="blur()"
               value="37°22ʹ43,84ʺ"
               placeholder="Введите долготу"
             >
@@ -270,6 +285,7 @@
             <input
               class="field"
               type="text"
+              onchange="blur()"
               value="YX-462793589"
               placeholder="Введите ID"
             >
@@ -294,6 +310,7 @@
             <input
               class="field"
               type="text"
+              onchange="blur()"
               value="123e4567-e89b-12d3-a456-426655440000"
               placeholder="Введите ID"
             >
@@ -311,6 +328,7 @@
             <input
               class="common-data__contacts-input field"
               type="text"
+              onchange="blur()"
               value="exxonmobilservice.com"
               placeholder="Введите сайт"
             >
@@ -323,6 +341,7 @@
             <input
               class="common-data__contacts-input field"
               type="text"
+              onchange="blur()"
               value="emservice@mail.com"
               placeholder="Введите сайт"
             >
@@ -347,6 +366,7 @@
             <input
               class="common-data__contacts-input field"
               type="text"
+              onchange="blur()"
               value="exxonmobilservice@mail.com"
               placeholder="Введите e-mail"
             >
@@ -359,6 +379,7 @@
             <input
               class="common-data__contacts-input field"
               type="text"
+              onchange="blur()"
               value="emservice@mail.com"
               placeholder="Введите e-mail"
             >
@@ -383,6 +404,7 @@
             <input
               class="common-data__contacts-input field"
               type="text"
+              onchange="blur()"
               value="+7 (987) 654-32-10"
               placeholder="Введите телефон"
             >
@@ -429,6 +451,7 @@
             <masked-input
               class="common-data__schedule-input field"
               type="text"
+              onchange="blur()"
               mask="11:11 — 11:11"
               placeholder="ЧЧ:ММ — ЧЧ:ММ"
             />
@@ -463,6 +486,7 @@
             <masked-input
               class="common-data__schedule-input field"
               type="text"
+              onchange="blur()"
               mask="11:11 — 11:11"
               placeholder="ЧЧ:ММ — ЧЧ:ММ"
             />
@@ -505,6 +529,7 @@
                 class="field icon"
                 :value="inputValue"
                 v-on="inputEvents"
+                readonly
                 placeholder="Укажите дату"
               />
               <button
@@ -527,6 +552,7 @@
                 class="field icon"
                 :value="inputValue"
                 v-on="inputEvents"
+                readonly
                 placeholder="Укажите дату"
               />
               <button
@@ -549,6 +575,7 @@
                 class="field icon"
                 :value="inputValue"
                 v-on="inputEvents"
+                readonly
                 placeholder="Укажите дату"
               />
               <button

@@ -14,7 +14,7 @@
     <div class="row row-2 link-external">
       <p class="my-mobil__subtitle subtitle">Booking Link</p>
       <label>
-        <input class="field" type="text" value="link.mymobil.ru">
+        <input class="field" type="text" onchange="blur()" value="link.mymobil.ru">
         <router-link to="/link.mymobil.ru" target="_blank" />
       </label>
     </div>
@@ -26,6 +26,7 @@
             class="field icon"
             :value="inputValue"
             v-on="inputEvents"
+            readonly
             placeholder="Укажите дату"
           />
           <button
