@@ -493,6 +493,7 @@
     .chips-wrapper {
       display: flex;
       flex-wrap: wrap;
+      align-items: baseline;
       
       .chips {
         margin-right: 10px;
