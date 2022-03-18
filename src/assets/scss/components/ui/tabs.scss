@@ -3,14 +3,7 @@
   &__tab-wrapper {
     display: flex;
     border-bottom: 1px solid #EBEBEB;
-    
-    @media (max-width: $lg) {
-      overflow-x: auto;
-      
-      ::-webkit-scrollbar {
-        height: 2px!important;
-      }
-    }
+    overflow-x: auto;
   }
   
   &__tab {
@@ -19,10 +12,6 @@
     border-bottom: 2px solid transparent;
     white-space: nowrap;
     transition: border-bottom .2s ease, color .2s ease;
-    
-    @media (max-width: $lg) {
-      font-size: 12px;
-    }
     
     &:hover {
       color: #E8000B;
@@ -42,16 +31,16 @@
     &.is-active {
       color: $text-brand;
       border-bottom: 2px solid $brand-primary;
+      
+      @media (max-width: $md) {
+        border-bottom: 1px solid $brand-primary;
+      }
     }
   }
   
   &__tab-link {
     padding: 12px 0 14px;
     cursor: pointer;
-    
-    @media (max-width: $lg) {
-      padding: 12px 0 7px;
-    }
   }
 }
 

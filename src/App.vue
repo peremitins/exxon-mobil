@@ -5,6 +5,7 @@
       @closeModal="closeModal"
       @acceptModal="acceptModal"
     />
+    <SearchMobile />
     <div class="main">
       <Sidebar class="desktop" />
       <Sidebar
@@ -20,12 +21,14 @@
 </template>
 
 <script>
+import SearchMobile from './components/SearchMobile'
 import Footer from './components/Footer'
 import Modal from './components/Modal'
 import Sidebar from './components/Sidebar.vue'
 
 export default {
   components: {
+    SearchMobile,
     Footer,
     Modal,
     Sidebar

@@ -11,15 +11,17 @@
         placeholder="Выберите"
       />
     </div>
-    <div class="row row-2 link-external">
+    <div class="row row-2">
       <p class="my-mobil__subtitle subtitle">Booking Link</p>
-      <label>
+      <label class="my-mobil__label-link link-external">
         <input class="field" type="text" onchange="blur()" value="link.mymobil.ru">
-        <router-link to="/link.mymobil.ru" target="_blank" />
+        <router-link to="/link.mymobil.ru" target="_blank"  class="router-link"/>
+        <svg>
+          <use xlink:href="../assets/img/svg/sprite.svg#ic_external" />
+        </svg>
       </label>
     </div>
     <div class="row row-3">
-      <p class="my-mobil__subtitle subtitle">Дата подключения</p>
       <v-date-picker v-model="dateConnection" class="calendar-icon" :popover="{ visibility: 'click' }">
         <template v-slot="{ inputValue, inputEvents }">
           <input
@@ -29,6 +31,10 @@
             readonly
             placeholder="Укажите дату"
           />
+          <svg>
+            <use xlink:href="../assets/img/svg/sprite.svg#ic24_calendar" />
+          </svg>
+          <p class="my-mobil__subtitle subtitle">Дата подключения</p>
           <button
             type="button"
             class="calendar-icon-close"
@@ -41,9 +47,13 @@
         </template>
       </v-date-picker>
     </div>
-    <div class="row row-4">
+    <div class="row row-4 column-reverse">
+      <textarea-autosize 
+        placeholder="Необязательно"
+        :min-height="96"
+        :max-height="200"
+      />
       <p class="my-mobil__subtitle subtitle">Комментарий при подключении</p>
-      <textarea placeholder="Необязательно" />
     </div>
   </section>
 </template>

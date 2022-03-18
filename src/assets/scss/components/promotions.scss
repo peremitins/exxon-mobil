@@ -114,16 +114,27 @@
   
   &__row-description-link {
     display: flex;
+    color: $text-brand;
     
     svg {
       width: 22px;
       height: 22px;
+      fill: $text-brand;
     }
- 
+
     &:hover {
       color: $brand-primary;
+      
       svg {
         fill: $brand-primary;
+      }
+    }
+    
+    &:active {
+      color: $text-brand;
+      
+      svg {
+        fill: $text-brand;
       }
     }
   }

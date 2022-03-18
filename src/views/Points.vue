@@ -12,7 +12,15 @@
         </button>
       </div>
       <div class="m1c__code">
-        RU124124
+        <span class="m1c__code-title">
+          RU124124
+        </span>
+        <router-link to="/" class="m1c__code-link">
+          ОФРС
+          <svg>
+            <use xlink:href="../assets/img/svg/sprite.svg#ic_external" />
+          </svg>
+        </router-link>
       </div>
       <div class="m1c__update-date">
         Обновлено

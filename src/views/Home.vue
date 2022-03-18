@@ -2,8 +2,8 @@
   <div class="home">
     <Header />
     <FilterBlock />
-    <div class="table-container" aria-label="Destinations">
-      <div class="flex-table">
+    <div class="table-container table">
+      <div class="flex-table table__header">
         <div class="flex-row">
           ID
         </div>
@@ -18,21 +18,40 @@
         </div>
       </div>
       <router-link to="/points/m1c" class="flex-table row link">
-        <div class="flex-row">
+        <div class="flex-row table__id">
           RU239891
         </div>
-        <div class="flex-row">
+        <div class="flex-row table__title">
           Mobil 1 Центр Автосервис на Кропоткина (ТРИО ООО_ИП Саитова)
-          <p>Московская обл., Москва, Ленина, 126</p>
         </div>
-        <div class="flex-row">
+        <div class="flex-row table__type">
           Сервисная станция Mobil 1 Centr
         </div>
-        <div class="flex-row">
+        <div class="flex-row table__distributor">
           Дистрибьютор
+        </div>
+        <div class="flex-row table__address">
+          <p>Московская обл., Москва, Ленина, 126</p>
         </div>
       </router-link>
       <router-link to="/points/m1c" class="flex-table row link">
+        <div class="flex-row table__id">
+          RU239891
+        </div>
+        <div class="flex-row table__title blocked">
+          Mobil 1 Центр Автосервис на Кропоткина (ТРИО ООО_ИП Саитова)
+        </div>
+        <div class="flex-row table__type">
+          Сервисная станция Mobil 1 Centr
+        </div>
+        <div class="flex-row table__distributor">
+          Дистрибьютор
+        </div>
+        <div class="flex-row table__address">
+          <p>Московская обл., Москва, Ленина, 126</p>
+        </div>
+      </router-link>
+      <!-- <router-link to="/points/m1c" class="flex-table row link">
         <div class="flex-row">
           RU239893
         </div>
@@ -91,7 +110,7 @@
         <div class="flex-row">
           Дистрибьютор
         </div>
-      </router-link>
+      </router-link> -->
     </div>
   </div>
 </template>
@@ -116,7 +135,6 @@ export default {
   display: block;
   margin: 2em auto;
   width: 100%;
-  overflow-x: auto;
   
   @media (max-width: $sm) {
     margin: 1em auto;
@@ -127,8 +145,13 @@ export default {
 .flex-table {
   display: grid;
   grid-template-columns: 85px minmax(110px, 1000px) minmax(145px, 150px) minmax(145px, 470px);
-  grid-template-rows: auto;
-  gap: 0 30px;
+  grid-template-rows: auto auto;
+  grid-template-areas: 
+    'id title type distributor'
+    '. address . .'
+  ;
+  gap: 2px 30px;
+  padding: 15px 0 17px;
   width: fit-content;
   border-bottom: 1px solid #EBEBEB;
   transition: 0.5s;
@@ -138,11 +161,16 @@ export default {
   }
   
   @media (max-width: $md) {
-    grid-template-columns: 85px 350px 150px 145px;
-  }
-  
-  @media (max-width: $sm) {
-    grid-template-columns: 45px 280px 120px 120px;
+    grid-template-columns: min-content auto;
+    grid-template-areas: 
+      'title title'
+      'id type'
+      'address address'
+      'distributor distributor'
+    ;
+    gap: 3px;
+    width: auto;
+    padding-right: 10px;
   }
   
   &.link {
@@ -155,6 +183,10 @@ export default {
       transform: translateY(-50%);
       width: 24px;
       height: 24px;
+      
+      @media (max-width: $md) {
+        right: -8px;
+      }
     }
   }
   
@@ -170,7 +202,7 @@ export default {
     line-height: 18px;
     letter-spacing: 0.2px;
     text-transform: uppercase;
-    color: rgba(26, 23, 23, 0.44);
+    color: $text-secondary;
   }
 }
 
@@ -179,23 +211,34 @@ export default {
   position: relative;
   width: 100%;
   text-align: left;
-  padding: 15px 15px 15px 0;
   font-size: 15px;
   line-height: 22px;
-  color: #1A1717;
+  color: $text-primary;
+  
+  @media (max-width: $md) {
+    font-size: 13px;
+    color: rgba(26, 23, 23, 0.6);
+  }
   
   &.blocked {
     padding-left: 24px;
     &::before {
       content: url(../assets/img/svg/ic16_blocked.svg);
       position: absolute;
-      top: 17px;
+      top: 3px;
       left: 0;
       width: 16px;
       height: 16px;
+    }
+    
+    & ~ .table__address {
+      margin-left: 24px;
+    }
+    
+    & ~ .table__address {
       
-      @media (max-width: $sm) {
-        top: 13px;
+      @media (max-width: $md) {
+        margin-left: 0;
       }
     }
   }
@@ -203,18 +246,65 @@ export default {
   p {
     font-size: 13px;
     line-height: 18px;
-    color: rgba(26, 23, 23, 0.6);
+    color: $text-secondary;
+  }
+}
+
+.table {
+  
+  &__header {
     
-    @media (max-width: $sm) {
-      font-size: 11px;
+    @media (max-width: $md) {
+      display: none;
+    }
+    
+    & > div {
+      user-select: none;
     }
   }
   
-  @media (max-width: $sm) {
-    align-self: center;
-    padding: 5px 5px 5px 0;
-    font-size: 12px;
-    line-height: 14px;
+  &__id {
+    grid-area: id;
+    
+    &::after {
+      
+      @media (max-width: $md) {
+        content: '';
+        position: absolute;
+        top: 10px;
+        right: 6px;
+        width: 2px;
+        height: 2px;
+        background-color: rgba(26, 23, 23, 0.6);
+      }
+    }
+    
+    @media (max-width: $md) {
+      margin-right: 17px;
+    }
+  }
+
+  &__title {
+    font-size: 15px;
+    grid-area: title;
+    line-height: 22px;
+    
+    @media (max-width: $md) {
+      margin-bottom: 7px;
+      color: $text-primary;
+    }
+  }
+
+  &__type {
+    grid-area: type;
+  }
+
+  &__distributor {
+    grid-area: distributor;
+  }
+  
+  &__address {
+    grid-area: address;
   }
 }
 </style>

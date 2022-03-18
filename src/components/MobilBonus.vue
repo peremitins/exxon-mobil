@@ -12,19 +12,18 @@
       />
     </div>
     <div class="row row-2">
-      <p class="mobil-bonus__subtitle subtitle">ФИО руководителя/менеджера (Name of Owner)</p>
-      <label>
+      <label class="column-reverse">
         <input class="field" type="text" onchange="blur()" placeholder="ФИО">
+        <p class="mobil-bonus__subtitle subtitle">ФИО руководителя/менеджера (Name of Owner)</p>
       </label>
     </div>
     <div class="row row-3">
-      <p class="mobil-bonus__subtitle subtitle">E-mail для PIN-кода Mobil Бонус (E-mail of Owner)</p>
-      <label>
+      <label class="column-reverse">
         <input class="field" type="email" onchange="blur()" placeholder="Email">
+        <p class="mobil-bonus__subtitle subtitle">E-mail для PIN-кода Mobil Бонус (E-mail of Owner)</p>
       </label>
     </div>
     <div class="row row-4">
-      <p class="mobil-bonus__subtitle subtitle">Дата регистрации (Registration date)</p>
       <v-date-picker v-model="dateRegistration" class="calendar-icon" :popover="{ visibility: 'click' }">
         <template v-slot="{ inputValue, inputEvents }">
           <input
@@ -34,6 +33,10 @@
             readonly
             placeholder="Укажите дату"
           />
+          <svg>
+            <use xlink:href="../assets/img/svg/sprite.svg#ic24_calendar" />
+          </svg>
+          <p class="mobil-bonus__subtitle subtitle">Дата регистрации (Registration date)</p>
           <button
             type="button"
             class="calendar-icon-close"
@@ -47,7 +50,6 @@
       </v-date-picker>
     </div>
     <div class="row row-5">
-      <p class="mobil-bonus__subtitle subtitle">Дата подключения (Connection date)</p>
       <v-date-picker v-model="dateConnection" class="calendar-icon" :popover="{ visibility: 'click' }">
         <template v-slot="{ inputValue, inputEvents }">
           <input
@@ -57,6 +59,10 @@
             readonly
             placeholder="Укажите дату"
           />
+          <svg>
+            <use xlink:href="../assets/img/svg/sprite.svg#ic24_calendar" />
+          </svg>
+          <p class="mobil-bonus__subtitle subtitle">Дата подключения (Connection date)</p>
           <button
             type="button"
             class="calendar-icon-close"
@@ -69,13 +75,21 @@
         </template>
       </v-date-picker>
     </div>
-    <div class="row row-6">
+    <div class="row row-6 column-reverse">
+      <textarea-autosize 
+        placeholder="Необязательно (Optional)"
+        :min-height="96"
+        :max-height="200"
+      />
       <p class="mobil-bonus__subtitle subtitle">Комментарий (Comment)</p>
-      <textarea placeholder="Необязательно (Optional)" />
     </div>
-    <div class="row row-7">
+    <div class="row row-7 column-reverse">
+      <textarea-autosize 
+        placeholder="Необязательно (Optional)"
+        :min-height="56"
+        :max-height="200"
+      />
       <p class="mobil-bonus__subtitle subtitle">PRP комментарий (PRP comment)</p>
-      <textarea placeholder="Необязательно (Optional)" />
     </div>
   </section>
 </template>

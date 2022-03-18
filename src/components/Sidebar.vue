@@ -1,19 +1,20 @@
 <template>
   <aside class="sidebar" @click.stop="closeMenu">
-    <div @click.stop class="sidebar__wrapper" :class="{ 'hidden': !this.$store.state.isMenuShow }">
-      <button
-        type="button"
-        class="sidebar__btn-close"
-        @click="closeMenu"
-      >
-        <span></span>
-        <span></span>
-      </button>
+    <div @click.stop class="sidebar__wrapper" :class="{ 'hidden': !this.$store.state.isSearchShow }">
       <router-link
         to="/"
         class="sidebar__logo"
       >
         <img src="@/assets/img/svg/logo.svg" @click="closeMenu" alt="Логотип">
+      </router-link>
+      
+      <router-link to="" class="sidebar__person">
+        <svg class="sidebar__person-icon">
+          <use xlink:href="@/assets/img/svg/sprite.svg#ic_account" />
+        </svg>
+        <span class="sidebar__person-name">
+          Donald Duck
+        </span>
       </router-link>
       
       <nav class="sidebar__main-menu">

@@ -2,11 +2,11 @@
   <div class="sales__content">
     <div class="sales__volume-wrapper">
       <div class="sales__volume" v-for="(volume, idx) in volumes" :key="idx">
-        <div class="sales__volume-title">
-          {{ volume.name }}
-        </div>
-        <span class="sales__volume-value litres">
+        <span class="sales__volume-value litres column-reverse">
           <input type="number" onchange="blur()" :value="volume.value" class="field icon-right">
+          <div class="sales__volume-title">
+            {{ volume.name }}
+          </div>
         </span>
       </div>
     </div>
