@@ -7,7 +7,7 @@
       placeholder="по ID, наименованию или адресу"
     >
     <svg class="search-mobile__icon-search">
-      <use xlink:href="@/assets/img/svg/sprite.svg#ic24_search" />
+      <use xlink:href="../assets/img/svg/sprite.svg#ic24_search" />
     </svg>
     <button
       type="button"

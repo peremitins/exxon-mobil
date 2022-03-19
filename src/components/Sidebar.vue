@@ -5,13 +5,13 @@
         to="/"
         class="sidebar__logo"
       >
-        <img src="@/assets/img/svg/logo.svg" @click="closeMenu" alt="Логотип">
+        <img src="../assets/img/svg/logo.svg" @click="closeMenu" alt="Логотип">
       </router-link>
       
       <router-link to="/settings" class="sidebar__person">
         <div class="sidebar__person-wrapper" @click="closeMenu">
           <svg class="sidebar__person-icon">
-            <use xlink:href="@/assets/img/svg/sprite.svg#ic_account" />
+            <use xlink:href="../assets/img/svg/sprite.svg#ic_account" />
           </svg>
           <span class="sidebar__person-name">
             Donald Duck
