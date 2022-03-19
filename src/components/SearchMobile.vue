@@ -2,6 +2,7 @@
   <div class="search-mobile" :class="{ show: $store.state.isSearchShow }">
     <input
       type="text"
+      ref="search"
       v-model="searchValue"
       placeholder="по ID, наименованию или адресу"
     >
@@ -32,6 +33,16 @@ export default {
   methods: {
     closeSearch() {
       this.$store.commit('TOGGLE_SEARCH')
+    }
+  },
+  computed: {
+    isSearchShow() {
+      return this.$store.state.isSearchShow
+    }
+  },
+  watch: {
+    isSearchShow() {
+      this.$refs.search.focus()
     }
   }
 }

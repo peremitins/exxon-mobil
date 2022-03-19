@@ -1,8 +1,7 @@
 <template>
   <div class="common-data">
     <div class="common-data__status">
-      <div class="common-data__status-subtitle">
-        <p class="subtitle">Состояние (Status)</p>
+      <div class="common-data__status-subtitle column-reverse">
         <multiselect
           v-model="selectStatus"
           :options="['Подключено (Activated) ', 'item-2', 'item-3']"
@@ -11,14 +10,14 @@
           :show-labels="false"
           placeholder="Выберите"
         />
+        <p class="subtitle">Состояние (Status)</p>
       </div>
     </div>
       <section class="common-data__main divider">
         <div class="row row-1">
           <h5 class="common-data__title title">Основное</h5>
         </div>
-        <div class="row row-2">
-          <p class="common-data__subtitle subtitle">Тип (Type)</p>
+        <div class="row row-2 column-reverse">
           <multiselect
             v-model="selectType"
             :options="['Сервисная станция (Mobil 1 Centr)', 'item-2', 'item-3']"
@@ -27,6 +26,7 @@
             :show-labels="false"
             placeholder="Выберите тип"
           />
+          <p class="common-data__subtitle subtitle">Тип (Type)</p>
         </div>
         <div class="row row-3">
           <label class="column-reverse">
@@ -52,8 +52,7 @@
             <p class="common-data__subtitle subtitle">Наименование юридического лица или ИП</p>
           </label>
         </div>
-        <div class="row row-5">
-          <p class="common-data__subtitle subtitle">Снабжение точки</p>
+        <div class="row row-5 column-reverse">
           <multiselect
             v-model="selectDistributor"
             :options="['Дистрибьютор', 'item-2', 'item-3']"
@@ -62,6 +61,7 @@
             :show-labels="false"
             placeholder="Выберите дистрибьютора"
           />
+          <p class="common-data__subtitle subtitle">Снабжение точки</p>
         </div>
         <div class="row row-6">
           <label class="column-reverse">
@@ -90,8 +90,7 @@
             </svg>
           </label>
         </div>
-        <div class="row row-8">
-          <p class="common-data__subtitle subtitle">Канал (Channel)</p>
+        <div class="row row-8 column-reverse">
           <multiselect
             v-model="selectChannel"
             :options="['СТО', 'item-2', 'item-3']"
@@ -100,9 +99,9 @@
             :show-labels="false"
             placeholder="Выберите канал"
           />
+          <p class="common-data__subtitle subtitle">Канал (Channel)</p>
         </div>
-        <div class="row row-9">
-          <p class="common-data__subtitle subtitle">Субканал (Subchannel)</p>
+        <div class="row row-9 column-reverse">
           <multiselect
             v-model="selectSubchannel"
             :options="['Mobil 1 Centr', 'item-2', 'item-3']"
@@ -111,6 +110,7 @@
             :show-labels="false"
             placeholder="Выберите субканал"
           />
+          <p class="common-data__subtitle subtitle">Субканал (Subchannel)</p>
         </div>
         <div class="row row-10 common-data__slider">
           <ButtonAdd>
@@ -164,8 +164,7 @@
         <div class="row row-1">
           <h5 class="common-data__title title">Адрес</h5>
         </div>
-        <div class="row row-2">
-          <p class="common-data__subtitle subtitle">Страна (Country)</p>
+        <div class="row row-2 column-reverse">
           <multiselect
             v-model="selectCountry"
             :options="['Россия', 'item-2', 'item-3']"
@@ -174,9 +173,9 @@
             :show-labels="false"
             placeholder="Выберите страну"
           />
+          <p class="common-data__subtitle subtitle">Страна (Country)</p>
         </div>
-        <div class="row row-3">
-          <p class="common-data__subtitle subtitle">Регион (Region)</p>
+        <div class="row row-3 column-reverse">
           <multiselect
             v-model="selectRegion"
             :options="['Московская область', 'item-2', 'item-3']"
@@ -185,9 +184,9 @@
             :show-labels="false"
             placeholder="Выберите регион"
           />
+          <p class="common-data__subtitle subtitle">Регион (Region)</p>
         </div>
-        <div class="row row-4">
-          <p class="common-data__subtitle subtitle">Город (City/Town)</p>
+        <div class="row row-4 column-reverse">
           <multiselect
             v-model="selectCity"
             :options="['Москва', 'item-2', 'item-3']"
@@ -196,6 +195,7 @@
             :show-labels="false"
             placeholder="Выберите город"
           />
+          <p class="common-data__subtitle subtitle">Город (City/Town)</p>
         </div>
         <div class="row row-5">
           <label class="column-reverse">
@@ -444,8 +444,8 @@
       <section class="common-data__schedule divider">
         <h5 class="common-data__title title row">График работы</h5>
         <div class="common-data__subtitle-wrapper">
-          <p class="common-data__subtitle common-data__subtitle-days">Дни недели</p>
-          <p class="common-data__subtitle common-data__subtitle-hours" :class="{ red: inputTime }">С — До</p>
+          <p class="common-data__subtitle common-data__subtitle-days subtitle" :class="{ red: daysWeek }">Дни недели</p>
+          <p class="common-data__subtitle common-data__subtitle-hours subtitle" :class="{ red: inputTime }">С — До</p>
         </div>
         <div class="common-data__schedule-row">
           <multiselect
@@ -461,6 +461,8 @@
             label="dayLong"
             track-by="dayLong"
             :preselect-first="false"
+            @open="daysWeek = true"
+            @close="daysWeek = false"
           >
             <template slot="selection" slot-scope="{ values }">
               <span class="multiselect__single" v-if="values.length">
@@ -499,6 +501,8 @@
             label="dayLong"
             track-by="dayLong"
             :preselect-first="false"
+            @open="daysWeek = true"
+            @close="daysWeek = false"
           >
             <template slot="selection" slot-scope="{ values }">
               <span class="multiselect__single" v-if="values.length">
@@ -536,8 +540,7 @@
         <div class="row row-1">
           <h5 class="common-data__title title">Начало работы с Mobil 1 Centr</h5>
         </div>
-        <div class="row row-2">
-          <p class="common-data__subtitle subtitle">Вероятность закрытия станции</p>
+        <div class="row row-2 column-reverse">
           <multiselect
             v-model="selectReasons"
             :options="['Клиент готовится к переезду', 'item-2', 'item-3']"
@@ -546,6 +549,7 @@
             :show-labels="false"
             placeholder="Выберите"
           />
+          <p class="common-data__subtitle subtitle">Вероятность закрытия станции</p>
         </div>
         <div class="row row-3">
           <v-date-picker v-model="dateStartWork" class="calendar-icon" :popover="{ visibility: 'click' }">
@@ -664,8 +668,7 @@
         <div class="row row-1">
           <h5 class="common-data__title title">Связь с ответсвенными</h5>
         </div>
-        <div class="row row-2">
-          <p class="common-data__subtitle subtitle">Ответственный ТА</p>
+        <div class="row row-2 column-reverse">
           <multiselect
             v-model="selectResponsible"
             :options="['Джон Малкович', 'item-2', 'item-3']"
@@ -674,9 +677,9 @@
             :show-labels="false"
             placeholder="Выберите ответственного"
           />
+          <p class="common-data__subtitle subtitle">Ответственный ТА</p>
         </div>
-        <div class="row row-3">
-          <p class="common-data__subtitle subtitle">Дистрибьютор (Distributor)</p>
+        <div class="row row-3 column-reverse">
           <multiselect
             v-model="selectResponsibleDistributor"
             :options="['Дистрибьютор 1', 'item-2', 'item-3']"
@@ -685,6 +688,7 @@
             :show-labels="false"
             placeholder="Выберите дистрибьютора"
           />
+          <p class="common-data__subtitle subtitle">Дистрибьютор (Distributor)</p>
         </div>
       </section>
       
@@ -766,7 +770,8 @@ export default {
       dateFinishedAgreement: null,
       inputWebsite: null,
       inputEmail: null,
-      inputTime: null
+      inputTime: null,
+      daysWeek: null
     }
   },
   mounted() {

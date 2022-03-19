@@ -18,12 +18,24 @@
       </svg>
       <span class="header__backward-text">Объекты</span>
     </button>
-    <router-link to="" class="header__person">
-      <svg class="header__person-icon">
+    <router-link to="" class="header__person" v-click-outside="closePersonMenu">
+      <svg class="header__person-icon" @click="togglePersonMenu">
         <use xlink:href="@/assets/img/svg/sprite.svg#ic_account" />
       </svg>
+      <ul class="header__person-menu-list" v-if="isShowPersonMenu">
+        <li class="header__person-menu-item" @click="closePersonMenu">
+          <router-link to="" class="header__person-menu-link">
+            Настройки
+          </router-link>
+        </li>
+        <li class="header__person-menu-item" @click="closePersonMenu">
+          <router-link to="" class="header__person-menu-link">
+            Выход
+          </router-link>
+        </li>
+      </ul>
     </router-link>
-    <div class="header__mobile-btn-group">
+    <div class="header__mobile-btn-group" v-if="this.$route.path === '/'">
       <button class="header__mobile-btn header__mobile-btn-search" @click="showSearch">
         <svg>
           <use xlink:href="@/assets/img/svg/sprite.svg#ic36_search" />
@@ -47,6 +59,11 @@
 <script>
 export default {
   name: 'Header',
+  data() {
+    return {
+      isShowPersonMenu: null
+    }
+  },
   methods: {
     toggleMenu() {
       this.$store.commit('CLOSE_MENU')
@@ -55,8 +72,13 @@ export default {
       this.$store.commit('TOGGLE_SEARCH')
     },
     openFilter() {
-      conxole.log('kjb')
-      this.$store.commit('CLOSE_FILTER')
+      this.$store.commit('TOGGLE_FILTER')
+    },
+    togglePersonMenu() {
+      this.isShowPersonMenu = !this.isShowPersonMenu
+    },
+    closePersonMenu() {
+      this.isShowPersonMenu = false
     }
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="m1c">
     <Header />
-    <div class="m1c__header">
+    <div class="m1c__header" ref="header">
       <h2 class="m1c__title">Mobil 1 Центр Автосервис на Кропоткина (ТРИО ООО_ИП Саитова)</h2>
       <div class="m1c__btn-wrapper">
         <button class="btn btn__cancel">
@@ -27,7 +27,7 @@
         <span> 12.01.2022  22:45</span>
       </div>
     </div>
-    <Tabs>
+    <Tabs class="m1c-tabs">
       <Tab
         v-for="component in componentsData"
         :key="component.name"
@@ -37,10 +37,12 @@
         <component :is="component.component"></component>
       </Tab>
     </Tabs>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
+import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import Tab from '@/components/ui/Tab'
 import Tabs from '@/components/ui/Tabs'
@@ -54,6 +56,7 @@ import Promotions from '@/components/Promotions.vue'
 export default {
   name: 'Points',
   components: {
+    Footer,
     Header,
     Tab,
     Tabs,

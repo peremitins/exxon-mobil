@@ -26,7 +26,7 @@
     }
   }
   
-  &__person {
+  &__person-wrapper {
     display: none;
     
     @media (max-width: $lg) {
@@ -145,6 +145,6 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.25);
     transition: all .7s ease;
-    z-index: 10;
+    z-index: 100;
   }
 }

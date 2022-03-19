@@ -1,7 +1,6 @@
 <template>
   <section class="my-mobil">
-    <div class="row row-1">
-      <p class="my-mobil__subtitle subtitle">Состояние</p>
+    <div class="row row-1 column-reverse">
       <multiselect
         v-model="selectStatus"
         :options="['Подключено ', 'item-2', 'item-3']"
@@ -10,6 +9,7 @@
         :show-labels="false"
         placeholder="Выберите"
       />
+      <p class="my-mobil__subtitle subtitle">Состояние</p>
     </div>
     <div class="row row-2">
       <p class="my-mobil__subtitle subtitle">Booking Link</p>

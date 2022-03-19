@@ -1,7 +1,6 @@
 <template>
   <section class="mobil-bonus">
-    <div class="row row-1">
-      <p class="mobil-bonus__subtitle subtitle">Состояние (Status)</p>
+    <div class="row row-1 column-reverse">
       <multiselect
         v-model="selectStatus"
         :options="['Подключено (Activated) ', 'item-2', 'item-3']"
@@ -10,6 +9,7 @@
         :show-labels="false"
         placeholder="Выберите"
       />
+      <p class="mobil-bonus__subtitle subtitle">Состояние (Status)</p>
     </div>
     <div class="row row-2">
       <label class="column-reverse">

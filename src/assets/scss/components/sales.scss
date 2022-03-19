@@ -17,11 +17,33 @@
     padding-right: 100px;
     padding-bottom: 16px;
     border-bottom: 1px solid $divider;;
+    
+    @media (max-width: 715px) {
+      padding-right: 0;
+      margin: 0 -10px;
+    }
+    
+    @media (max-width: 390px) {
+      
+      .sales__volume {
+        width: 100%;
+        margin-right: 10px;
+      }
+      
+      .litres {
+        width: 100%;
+      }
+    }
   }
   
   &__volume {
     margin-right: 30px;
     margin-bottom: 14px;
+    
+    @media (max-width: $md) {
+      flex: 1 1 110px;
+      margin: 0 10px;
+    }
   }
   
   &__volume-title {
@@ -45,9 +67,25 @@
     padding-top: 20px;
     padding-bottom: 20px;
     
-    @media (max-width: 700px) {
+    @media (max-width: 820px) {
       flex-direction: column;
       padding-bottom: 0px;
+    }
+    
+    @media (max-width: $md) {
+      padding-right: 0;
+    }
+    
+    @media (max-width: 390px) {
+      
+      .sales__focus-product {
+        width: 100%;
+        margin-right: 0;
+      }
+      
+      .litres {
+        width: 100%;
+      }
     }
   }
   

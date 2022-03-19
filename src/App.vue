@@ -16,26 +16,23 @@
         <router-view class="pages" />
       </div>
     </div>
-    <Footer v-if="(this.$route.path !== '/') && (this.$route.name !== 'Error')" />
   </div>
 </template>
 
 <script>
 import SearchMobile from './components/SearchMobile'
-import Footer from './components/Footer'
 import Modal from './components/Modal'
 import Sidebar from './components/Sidebar.vue'
 
 export default {
   components: {
     SearchMobile,
-    Footer,
     Modal,
     Sidebar
   },
   data() {
     return {
-      isModalOpen: false,
+      isModalOpen: true,
       test: ''
     }
   },
@@ -45,6 +42,13 @@ export default {
     },
     acceptModal(val) {
       this.isModalOpen = val
+    },
+    overflowHidden() {
+      if (this.isModalOpen) {
+        document.documentElement.style.overflow = 'hidden'
+      } else {
+        document.documentElement.style.overflow = 'auto'
+      }
     }
   },
   mounted() {
@@ -53,19 +57,11 @@ export default {
         this.$store.commit('CLOSE_MENU')
       }
     })
-  },
-  computed: {
-    overflowBody() {
-      return this.$store.state.isMenuShow
-    }
+    this.overflowHidden()
   },
   watch: {
-    overflowBody() {
-      if(this.overflowBody){
-        document.documentElement.style.overflow = 'hidden'
-        return
-      }
-      document.documentElement.style.overflow = 'auto'
+    isModalOpen() {
+      this.overflowHidden()
     }
   }
 }

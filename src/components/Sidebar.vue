@@ -1,6 +1,6 @@
 <template>
   <aside class="sidebar" @click.stop="closeMenu">
-    <div @click.stop class="sidebar__wrapper" :class="{ 'hidden': !this.$store.state.isSearchShow }">
+    <div @click.stop class="sidebar__wrapper" :class="{ 'hidden': !this.$store.state.isMenuShow }">
       <router-link
         to="/"
         class="sidebar__logo"
@@ -8,13 +8,15 @@
         <img src="@/assets/img/svg/logo.svg" @click="closeMenu" alt="Логотип">
       </router-link>
       
-      <router-link to="" class="sidebar__person">
-        <svg class="sidebar__person-icon">
-          <use xlink:href="@/assets/img/svg/sprite.svg#ic_account" />
-        </svg>
-        <span class="sidebar__person-name">
-          Donald Duck
-        </span>
+      <router-link to="/settings" class="sidebar__person">
+        <div class="sidebar__person-wrapper" @click="closeMenu">
+          <svg class="sidebar__person-icon">
+            <use xlink:href="@/assets/img/svg/sprite.svg#ic_account" />
+          </svg>
+          <span class="sidebar__person-name">
+            Donald Duck
+          </span>
+        </div>
       </router-link>
       
       <nav class="sidebar__main-menu">

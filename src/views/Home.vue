@@ -51,66 +51,23 @@
           <p>Московская обл., Москва, Ленина, 126</p>
         </div>
       </router-link>
-      <!-- <router-link to="/points/m1c" class="flex-table row link">
-        <div class="flex-row">
-          RU239893
+      <router-link to="/points/m1c" class="flex-table row link">
+        <div class="flex-row table__id">
+          RU239891
         </div>
-        <div class="flex-row blocked">
-          СТО Замена масла
-          <p>Московская обл., Москва, Ленина, 126</p>
+        <div class="flex-row table__title">
+          Mobil 1 Центр Автосервис на Кропоткина (ТРИО ООО_ИП Саитова)
         </div>
-        <div class="flex-row">
-          НСТО (TIER 2)
+        <div class="flex-row table__type">
+          Сервисная станция Mobil 1 Centr
         </div>
-        <div class="flex-row">
+        <div class="flex-row table__distributor">
           Дистрибьютор
         </div>
-      </router-link>
-      <router-link to="/points/m1c" class="flex-table row link">
-        <div class="flex-row">
-          RU239893
-        </div>
-        <div class="flex-row">
-          СТО Замена масла
+        <div class="flex-row table__address">
           <p>Московская обл., Москва, Ленина, 126</p>
         </div>
-        <div class="flex-row">
-          НСТО (TIER 2)
-        </div>
-        <div class="flex-row">
-          Дистрибьютор
-        </div>
       </router-link>
-      <router-link to="/points/m1c" class="flex-table row link">
-        <div class="flex-row">
-          RU239893
-        </div>
-        <div class="flex-row">
-          СТО Замена масла
-          <p>Московская обл., Москва, Ленина, 126</p>
-        </div>
-        <div class="flex-row">
-          НСТО (TIER 2)
-        </div>
-        <div class="flex-row">
-          Дистрибьютор, Дистрибьютор 2
-        </div>
-      </router-link>
-      <router-link to="/points/m1c" class="flex-table row link">
-        <div class="flex-row">
-          RU239893
-        </div>
-        <div class="flex-row">
-          СТО Замена масла
-          <p>Московская обл., Москва, Ленина, 126</p>
-        </div>
-        <div class="flex-row">
-          НСТО (TIER 2)
-        </div>
-        <div class="flex-row">
-          Дистрибьютор
-        </div>
-      </router-link> -->
     </div>
   </div>
 </template>
@@ -135,9 +92,11 @@ export default {
   display: block;
   margin: 2em auto;
   width: 100%;
+  padding: 0px 0px 0 $sidebar-width;
   
-  @media (max-width: $sm) {
-    margin: 1em auto;
+  @media (max-width: $lg) {
+    margin: 0 auto;
+    padding: 0;
   }
 }
 
@@ -151,7 +110,7 @@ export default {
     '. address . .'
   ;
   gap: 2px 30px;
-  padding: 15px 0 17px;
+  padding: 15px 30px 17px 30px;
   width: fit-content;
   border-bottom: 1px solid #EBEBEB;
   transition: 0.5s;
@@ -173,19 +132,23 @@ export default {
     padding-right: 10px;
   }
   
+  @media (max-width: $sm) {
+    padding: 15px 22px 17px 15px;
+  }
+  
   &.link {
     position: relative;
     &::after {
       content: url(../assets/img/svg/ic24_arrow_right.svg);
       position: absolute;
       top: 50%;
-      right: 0;
+      right: 30px;
       transform: translateY(-50%);
       width: 24px;
       height: 24px;
       
       @media (max-width: $md) {
-        right: -8px;
+        right: 5px;
       }
     }
   }

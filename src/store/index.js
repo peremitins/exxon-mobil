@@ -13,7 +13,7 @@ export default new Vuex.Store({
     CLOSE_MENU(state) {
       state.isMenuShow = !state.isMenuShow;
     },
-    CLOSE_FILTER(state) {
+    TOGGLE_FILTER(state) {
       state.isFilterShow = !state.isFilterShow;
     },
     TOGGLE_SEARCH(state) {

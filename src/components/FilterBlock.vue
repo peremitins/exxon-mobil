@@ -1,6 +1,6 @@
 <template>
-  <div class="filter-block" @click.stop="closeFilter">
-    <div class="filter-block__wrapper" @click.stop :class="{ 'hidden': !this.$store.state.isFilterShow }">
+  <div class="filter-block" @click.stop="closeFilter" :class="{ 'show': this.$store.state.isFilterShow }">
+    <div class="filter-block__wrapper" @click.stop >
       <p class="filter-block__title">
         Фильтр
       </p>
@@ -62,10 +62,10 @@
         />
       </div>
       <div class="filter-block__btn-wrapper">
-        <button class="btn btn__cancel">
+        <button class="btn btn__cancel" @click="closeFilter">
           Отменить
         </button>
-        <button class="btn btn__save">
+        <button class="btn btn__save" @click="closeFilter">
           Применить
         </button>
       </div>
@@ -93,7 +93,7 @@ export default {
   },
   methods: {
     closeFilter() {
-      this.$store.commit('CLOSE_FILTER')
+      this.$store.commit('TOGGLE_FILTER')
     }
   }
 }
