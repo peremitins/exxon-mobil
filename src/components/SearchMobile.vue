@@ -33,6 +33,9 @@ export default {
   methods: {
     closeSearch() {
       this.$store.commit('TOGGLE_SEARCH')
+      this.$nextTick(() => {
+          this.$refs.search.blur()
+      })
     }
   },
   computed: {
