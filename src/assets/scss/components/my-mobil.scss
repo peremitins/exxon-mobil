@@ -19,4 +19,10 @@
       'row_4'
     ;
   }
+  
+  .row-2 {
+    .link-external .field {
+      color: $text-secondary!important;
+    }
+  }
 }

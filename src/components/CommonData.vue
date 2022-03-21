@@ -76,18 +76,19 @@
           </label>
         </div>
         <div class="row row-7 link-external">
-          <p class="common-data__subtitle subtitle">Ссылка на L-360</p>
-          <label class="link-external">
+          <label class="link-external column-reverse">
             <input
               class="field"
               type="text"
               onchange="blur()"
               value="www.l360.com"
             >
-            <router-link to="/" target="_blank" class="router-link" />
-            <svg>
-              <use xlink:href="../assets/img/svg/sprite.svg#ic_external" />
-            </svg>
+            <router-link to="/" target="_blank" class="router-link">
+              <svg>
+                <use xlink:href="../assets/img/svg/sprite.svg#ic_external" />
+              </svg>
+            </router-link>
+            <p class="common-data__subtitle subtitle">Ссылка на L-360</p>
           </label>
         </div>
         <div class="row row-8 column-reverse">

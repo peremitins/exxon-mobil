@@ -1,5 +1,5 @@
 .search-mobile {
-  display: flex;
+  display: none;
   align-items: center;
   background-color: #fff;
   height: 64px;
@@ -10,6 +10,10 @@
   top: -64px;
   transition: all $transition;
   z-index: 100;
+  
+  @media (max-width: $lg) {
+    display: flex;
+  }
   
   @media (max-width: $sm) {
     padding: 0 15px;

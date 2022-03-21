@@ -273,9 +273,14 @@
         color: $text-secondary;
         cursor: pointer;
         
+        &:focus {
+          border: none!important;
+          background-color: #f7f7f7!important;
+        }
+        
         &:active {
-          color: #FE000C;
-          background-color: #FFECEC;
+          color: #FE000C!important;
+          background-color: #FFECEC!important;
         }
       }
     }
@@ -605,6 +610,12 @@
     .row-2 {
       flex-direction: column-reverse;
       margin-bottom: 9px;
+    }
+  }
+  
+  .row-7 {
+    .link-external .field {
+      color: $text-secondary!important;
     }
   }
 }

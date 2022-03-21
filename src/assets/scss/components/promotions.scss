@@ -124,6 +124,7 @@
 
     &:hover {
       color: $brand-primary;
+      text-decoration: underline;
       
       svg {
         fill: $brand-primary;

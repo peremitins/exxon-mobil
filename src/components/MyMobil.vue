@@ -12,13 +12,14 @@
       <p class="my-mobil__subtitle subtitle">Состояние</p>
     </div>
     <div class="row row-2">
-      <p class="my-mobil__subtitle subtitle">Booking Link</p>
-      <label class="my-mobil__label-link link-external">
+      <label class="my-mobil__label-link link-external column-reverse">
         <input class="field" type="text" onchange="blur()" value="link.mymobil.ru">
-        <router-link to="/link.mymobil.ru" target="_blank"  class="router-link"/>
-        <svg>
-          <use xlink:href="../assets/img/svg/sprite.svg#ic_external" />
-        </svg>
+        <router-link to="/link.mymobil.ru" target="_blank"  class="router-link">
+          <svg>
+            <use xlink:href="../assets/img/svg/sprite.svg#ic_external" />
+          </svg>
+        </router-link>
+        <p class="my-mobil__subtitle subtitle">Booking Link</p>
       </label>
     </div>
     <div class="row row-3">

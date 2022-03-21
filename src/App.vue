@@ -5,7 +5,7 @@
       @closeModal="closeModal"
       @acceptModal="acceptModal"
     />
-    <SearchMobile />
+    <SearchMobile v-if="$route.name == 'Home'" />
     <div class="main">
       <Sidebar class="desktop" />
       <Sidebar
