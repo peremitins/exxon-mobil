@@ -10,6 +10,13 @@
         "status . .";
     margin-bottom: 25px;
     
+    .status {
+      display: none;
+      @media (max-width: $lg) {
+        display: block;
+      }
+    }
+    
     @media (max-width: $xl) {
       grid-template-columns: 1fr 1fr;
       grid-template-areas:

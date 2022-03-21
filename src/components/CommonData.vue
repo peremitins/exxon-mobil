@@ -3,12 +3,19 @@
     <div class="common-data__status">
       <div class="common-data__status-subtitle column-reverse">
         <multiselect
+          class="status"
           v-model="selectStatus"
           :options="['Подключено (Activated) ', 'item-2', 'item-3']"
           :searchable="false"
           :close-on-select="true"
           :show-labels="false"
           placeholder="Выберите"
+        />
+        <ToggleButtonGroup
+          class="common-data__btn-toggle"
+          :selected="selected"
+          :tabs="tabs"
+          @changeSelectVal="changeSelectVal"
         />
         <p class="subtitle">Состояние (Status)</p>
       </div>
@@ -712,6 +719,7 @@
 <script>
 import { yandexMap } from 'vue-yandex-maps'
 import ButtonAdd from './ui/ButtonAdd'
+import ToggleButtonGroup from '@/components/ui/ToggleButtonGroup'
 import MaskedInput from 'vue-masked-input'
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import "swiper/css/swiper.css"
@@ -723,10 +731,16 @@ export default {
     Swiper,
     SwiperSlide,
     MaskedInput,
-    yandexMap
+    yandexMap,
+    ToggleButtonGroup
   },
   data() {
     return {
+      selected: "Активирована (Activated)",
+      tabs: {
+        'Активирована (Activated)': 'Активирована (Activated)',
+        'Заблокировать (Block)': 'Заблокировать (Block)'
+      },
       OpenIndicator: {
         render: createElement => createElement('span', {class: {'toggle-arrow': true}}),
       },
@@ -779,6 +793,11 @@ export default {
     this.$nextTick(() => {
       this.$refs.mySwiper.updateSwiper()
     });
+  },
+  methods: {
+    changeSelectVal(val) {
+      this.selected = val
+    }
   }
 }
 </script>
