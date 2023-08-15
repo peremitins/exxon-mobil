@@ -1,6 +1,6 @@
 # exxon-mobile
 
-## https://allfreelance.github.io/exxon-mobil/
+## https://peremitins.github.io/exxon-mobil/
 
 
 ## Project setup
